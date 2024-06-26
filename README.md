@@ -129,3 +129,8 @@ MVPリリースでは、投稿された旅行プランのタイトルと本文�
 ・CSSフレームワークについて
 Tailwindを使用予定です。
 1つのクラスに1つのCSSプロパティが紐づいているため、UIを組み立てた時のトラブルシューティングがしやすいと思い、Bootstrapではなくこちらを採用しました。技術調査も兼ねて実際にTailwindを使用して、簡単なトップページをデザインした上で、使用可能と判断しました。
+
+
+■画面遷移図
+Figma:
+https://www.figma.com/design/Vtm89NgvqgBJLijVTh6udW/Portfolio?node-id=0-1&t=HfWlX2syXyVPXko1-1
