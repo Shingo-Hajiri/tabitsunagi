@@ -134,3 +134,16 @@ Tailwindを使用予定です。
 ■画面遷移図(6/27修正)
 Figma:
 https://www.figma.com/design/Vtm89NgvqgBJLijVTh6udW/Portfolio?node-id=0-1&t=HfWlX2syXyVPXko1-1
+
+
+■ER図
+https://drive.google.com/file/d/1iQZt5d4_rXbhghP0CGG5eDuU_mKhJC5M/view?usp=sharing
+
+※created_atやupdated_atといったデフォルトで生成されるタイムスタンプカラムは省略しています。
+
+・Usersテーブルについて
+Emailアドレスを登録してもらうため、なるべくURLからidの情報を推測しづらくして匿名性を高める観点からuuidを使用します。
+
+・画像について
+ActiveStorageを使用します。
+それに伴い、ファイルサーバはAWS S3を使用します。
