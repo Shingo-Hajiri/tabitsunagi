@@ -11,7 +11,12 @@
   </head>
 
   <body class="bg-base-orange text-gray-600 tracking-widest">
-  <%= render 'shared/header' %>
+  <% if user_signed_in? %>
+    <%= render 'shared/header' %>
+  <% else %>
+    <%= render 'shared/before_login_header' %>
+  <% end %>
+  <%= render 'shared/flash_message' %>
     <%= yield %>
   <%= render 'shared/footer' %>
   </body>

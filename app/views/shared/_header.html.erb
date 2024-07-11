@@ -1,15 +1,10 @@
 <header class="py-0 px-5 my-0 mx-auto max-w-screen-xl">
   <div class="flex justify-between py-5 px-0">
-  <%= link_to root_path do %>
-    <h1 class="m-0 font-black text-xl">旅つなぎ</h1>
-  <% end %>
-    <div class="flex">
-      <div class="pr-12 cursor-pointer sm:hidden">
-        <i class="fa-solid fa-right-to-bracket fa-xl"></i>
-      </div>
-      <div id='open' class="cursor-pointer sm:hidden">
-        <i class="fa-solid fa-bars fa-xl"></i>
-      </div>
+    <%= link_to root_path do %>
+      <h1 class="m-0 font-black text-xl">旅つなぎ</h1>
+    <% end %>
+    <div id='open' class="cursor-pointer sm:hidden">
+      <i class="fa-solid fa-bars fa-xl"></i>
     </div>
     <div id='close' class="cursor-pointer hidden z-30 sm:hidden">
       <i class="fa-solid fa-xmark fa-xl absolute top-5 right-5"></i>
@@ -17,10 +12,18 @@
     <div class="hidden sm:block">
       <nav>
         <ul class="flex space-x-4 text-sm leading-8">
-          <li><a href="#">旅行プラン一覧</a></li>
+          <li>
+          <%= link_to "#" do %>
+            <div class="flex">
+              <%= image_tag("sample.jpeg", class: "w-8 h-8 rounded-full") %>
+              <span class="pl-2">アカウント名</span>
+            </div>
+          <% end %> 
+          </li>
           <li><a href="#">投稿する</a></li>
-          <li><a href="#">アカウント登録</a></li>
-          <li><a href="#">ログイン</a></li>
+          <li><a href="#">マイ旅行プラン</a></li>
+          <li><a href="#">旅行プラン一覧</a></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %></li>
           <li><a href="#">サイトについて</a></li>
         </ul>
       </nav>
@@ -28,10 +31,16 @@
     <div class="block fixed inset-0 bg-white text-center z-20 hidden" id='menu'>
       <nav>
         <ul>
-          <li class="mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">旅行プラン一覧</a></li>
+          <li class="mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom">
+            <%= link_to "#" do %>
+              <%= image_tag("sample.jpeg", class: "my-0 mx-auto w-16 h-16 rounded-full mb-2") %>
+              <span>アカウント名</span>
+          <% end %> 
+          </li>
           <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">投稿する</a></li>
-          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">アカウント登録</a></li>
-          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">ログイン</a></li>
+          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">マイ旅行プラン一覧</a></li>
+          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">旅行プラン一覧</a></li>
+            <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %></li>
           <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">サイトについて</a></li>
         </ul>
       </nav>
