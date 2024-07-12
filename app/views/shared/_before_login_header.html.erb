@@ -4,8 +4,8 @@
     <h1 class="m-0 font-black text-xl">旅つなぎ</h1>
   <% end %>
     <div class="flex">
-      <%= link_to user_session_path do %>
-        <div class="pr-12 cursor-pointer sm:hidden">
+      <%= link_to user_session_path, class: "mr-12" do %>
+        <div class="cursor-pointer sm:hidden">
           <i class="fa-solid fa-right-to-bracket fa-xl"></i>
         </div>
       <% end %>
@@ -19,11 +19,13 @@
     <div class="hidden sm:block">
       <nav>
         <ul class="flex space-x-4 text-sm leading-8">
-          <li><a href="#">旅行プラン一覧</a></li>
-          <li><a href="#">投稿する</a></li>
-          <li><a href="#">アカウント登録</a></li>
+          <li><%= link_to t('plans.index.title'), plans_path %></li>
+          <li><%= link_to '投稿する', new_plan_path %></li>
+          <%= link_to new_user_registration_path do %>
+            <li><%= t('devise.registrations.new.title') %></li>
+          <% end %>
           <%= link_to user_session_path do %>
-            <li>ログイン</li>
+            <li><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
           <li><a href="#">サイトについて</a></li>
         </ul>
@@ -32,11 +34,13 @@
     <div class="block fixed inset-0 bg-white text-center z-20 hidden" id='menu'>
       <nav>
         <ul>
-          <li class="mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">旅行プラン一覧</a></li>
-          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">投稿する</a></li>
-          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">アカウント登録</a></li>
+          <li class="mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= link_to t('plans.index.title'), plans_path %></li>
+          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= link_to '投稿する', new_plan_path %></li>
+          <%= link_to new_user_registration_path do %>
+            <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= t('devise.registrations.new.title') %></li>
+          <% end %>
           <%= link_to user_session_path do %>
-            <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom">ログイン</li>
+            <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
           <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">サイトについて</a></li>
         </ul>

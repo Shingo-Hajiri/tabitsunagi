@@ -12,6 +12,17 @@ module.exports = {
         'main-orange': '#ffb83d',
         'accent-blue': '#3d98ff'
       },
+      letterSpacing: {
+        'custom': '1em'
+      },
+      resize: {
+        none: 'none',
+      },
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '96': '24rem',
+                },
       animation: {
         "tracking-in-expand-fwd-bottom": "tracking-in-expand-fwd-bottom 1.0s cubic-bezier(0.215, 0.610, 0.355, 1.000)   both"
     },
