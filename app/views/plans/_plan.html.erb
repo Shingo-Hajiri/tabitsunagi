@@ -1,0 +1,41 @@
+<div class="mb-5 mx-5">
+  <div class="card lg:flex-row lg:card-side bg-base-100 shadow-xl md:w-84 lg:w-96 mx-auto">
+  <div class="flex flex-col">
+    <div class='my-3 mx-3 flex-shrink-0'>
+      <%= link_to '#' do %>
+        <div class='flex'>
+            <%= image_tag('sample.jpg', class: 'w-32 h-32 rounded-lg') %>
+          <div class='flex flex-col justify-between w-full h-32 ml-5 md:w-42 lg:w-48 mx-auto'>
+            <h2 class='text-main-orange font-bold '><%= plan.title %></h2>
+            <div  class='text-right text-xs my-2'>
+              <span class='border-b border-gray-600 '>詳しく見る →</span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div  class='flex justify-between mb-3 mx-3 flex-grow'>
+      <div class='flex'>
+        <div>
+          <i class="fa-solid fa-location-dot fa-lg" style="color: #ffb83d;"></i>
+          <span>東京都</span>
+        </div>
+        <div class='flex ml-2'>
+          <%= image_tag("sample.jpeg", class: "w-6 h-6 rounded-full") %>
+          <span class='pl-1'><%= plan.user.name %></span>
+        </div>
+      </div>
+      <% if user_signed_in? && current_user.own?(plan) %>
+        <div>
+          <%= link_to '#' do %>
+            <i class="fa-brands fa-square-x-twitter fa-lg"></i>
+          <% end %>
+          <%= link_to '#' do %>
+            <i class="fa-solid fa-pen-to-square fa-lg ml-5"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>

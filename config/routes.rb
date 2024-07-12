@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   root "tops#top"
 
+  resources :plans, only: %i[index new create]
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

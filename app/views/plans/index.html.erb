@@ -1,4 +1,4 @@
-<main class="py-0 px-5 my-0 mx-auto max-w-screen-xl h-screen z-10">
+<main class="py-0 px-5 my-0 mx-auto max-w-screen-xl h-full z-10">
   <label class="input input-bordered flex items-center gap-2 my-4  sm:mx-32">
     <input type="text" class="grow" placeholder="検索ワード" />
     <svg
@@ -12,6 +12,12 @@
         clip-rule="evenodd" />
     </svg>
   </label>
-  <h1 class="text-accent-blue font-bold pt-3 mb-0 mx-auto text-center text-xl"><%= t('.sub_title1') %></h1>
-  <h1 class="text-accent-blue font-bold pt-3 mb-0 mx-auto text-center text-xl"><%= t('.sub_title2') %></h1>
+  <h1 class="text-accent-blue font-bold pt-3 pb-5 mb-0 mx-auto text-center text-xl"><%= t('.title') %></h1>
+  <% if @plans.present? %>
+  <div class='mb-10 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3'>
+    <%= render @plans %>
+  </div>
+  <% else %>
+    <p class="text-center">旅行プランがありません。</p>
+  <% end %>
 </main>

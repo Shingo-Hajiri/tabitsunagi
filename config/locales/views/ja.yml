@@ -1,5 +1,11 @@
 ja:
-  top:
-    title: トップページ
-    sub_title1: 新着
-    sub_title2: 人気プラン10選
+  tops:
+    top:
+      title: トップページ
+      sub_title1: 新着
+      sub_title2: おすすめスポット10選
+  plans:
+    index:
+      title: みんなのおすすめ旅
+    new:
+      title: 旅行プランを投稿する
