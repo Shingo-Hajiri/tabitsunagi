@@ -3,7 +3,7 @@ class PlansController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @plans = Plan.includes(:user)
+    @plans = Plan.includes(:user).order(created_at: :desc)
   end
 
   def new
