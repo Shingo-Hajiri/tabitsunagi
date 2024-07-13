@@ -1,24 +1,24 @@
-<header class="py-0 px-5 my-0 mx-auto max-w-screen-xl">
-  <div class="flex justify-between py-5 px-0">
+<header class='py-0 px-5 my-0 mx-auto max-w-screen-xl'>
+  <div class='flex justify-between py-5 px-0'>
   <%= link_to root_path do %>
-    <h1 class="m-0 font-black text-xl">旅つなぎ</h1>
+    <h1 class='m-0 font-black text-xl'>旅つなぎ</h1>
   <% end %>
-    <div class="flex">
-      <%= link_to user_session_path, class: "mr-12" do %>
-        <div class="cursor-pointer sm:hidden">
-          <i class="fa-solid fa-right-to-bracket fa-xl"></i>
+    <div class='flex'>
+      <%= link_to user_session_path, class: 'mr-12' do %>
+        <div class='cursor-pointer sm:hidden'>
+          <i class='fa-solid fa-right-to-bracket fa-xl'></i>
         </div>
       <% end %>
-      <div id='open' class="cursor-pointer sm:hidden">
-        <i class="fa-solid fa-bars fa-xl"></i>
+      <div id='open' class='cursor-pointer sm:hidden'>
+        <i class='fa-solid fa-bars fa-xl'></i>
       </div>
     </div>
-    <div id='close' class="cursor-pointer hidden z-30 sm:hidden">
-      <i class="fa-solid fa-xmark fa-xl absolute top-5 right-5"></i>
+    <div id='close' class='cursor-pointer hidden z-30 sm:hidden'>
+      <i class='fa-solid fa-xmark fa-xl absolute top-5 right-5'></i>
     </div>
-    <div class="hidden sm:block">
+    <div class='hidden sm:block'>
       <nav>
-        <ul class="flex space-x-4 text-sm leading-8">
+        <ul class='flex space-x-4 text-sm leading-8'>
           <li><%= link_to t('plans.index.title'), plans_path %></li>
           <li><%= link_to '投稿する', new_plan_path %></li>
           <%= link_to new_user_registration_path do %>
@@ -27,22 +27,22 @@
           <%= link_to user_session_path do %>
             <li><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
-          <li><a href="#">サイトについて</a></li>
+          <li><a href='#'>サイトについて</a></li>
         </ul>
       </nav>
     </div>
-    <div class="block fixed inset-0 bg-white text-center z-20 hidden" id='menu'>
+    <div class='block fixed inset-0 bg-white text-center z-20 hidden' id='menu'>
       <nav>
         <ul>
-          <li class="mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= link_to t('plans.index.title'), plans_path %></li>
-          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= link_to '投稿する', new_plan_path %></li>
+          <li class='mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.index.title'), plans_path %></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to '投稿する', new_plan_path %></li>
           <%= link_to new_user_registration_path do %>
-            <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= t('devise.registrations.new.title') %></li>
+            <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= t('devise.registrations.new.title') %></li>
           <% end %>
           <%= link_to user_session_path do %>
-            <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><%= t('devise.sessions.new.sign_in') %></li>
+            <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
-          <li class="mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom"><a href="#">サイトについて</a></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><a href='#'>サイトについて</a></li>
         </ul>
       </nav>
     </div>
