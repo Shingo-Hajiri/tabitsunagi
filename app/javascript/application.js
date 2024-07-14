@@ -8,5 +8,3 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import '@fortawesome/fontawesome-free'
 library.add(fas, far, fab)
 import "./custom/menu";
-
-//= require activestorage
