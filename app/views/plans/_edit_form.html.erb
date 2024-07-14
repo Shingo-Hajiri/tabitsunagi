@@ -12,6 +12,14 @@
       <%= f.file_field :thumbnail, direct_upload: true, class: 'w-full file-input border-none custom-file-input' %>
     </div>
   </div>
+  <div class='sm:mx-32'>
+    <% if plan.thumbnail.present? %>
+      <p>現在の画像</p>
+      <div>
+        <%= image_tag plan.thumbnail, class: 'w-32 h-32 rounded-lg' %>
+      </div>
+    <% end %>
+  </div>
 
   <div class='pt-10 mb-10 sm:mx-32'>
     <%= f.label :body %>
