@@ -1,0 +1,37 @@
+<%= form_with model: plan do |f| %>
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :title %>
+    <label class='input flex items-center gap-2'>
+      <%= f.text_field :title, class: 'w-full' %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :thumbnail %>
+    <div class='flex'>
+      <%= f.file_field :thumbnail, direct_upload: true, class: 'w-full file-input border-none custom-file-input' %>
+    </div>
+  </div>
+
+  <div class='pt-10 mb-10 sm:mx-32'>
+    <%= f.label :body %>
+    <label class='flex w-full'>
+      <%= f.text_area :body, class:'textarea h-24 w-full resize-none text-base' %>
+    </label>
+  </div>
+
+  <div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'>
+  </div>
+
+  <h2 class='text-main-orange font-bold pt-3 mt-5 mb-0 mx-auto text-xl sm:text-center'>おすすめスポット</h2>
+
+  <%= f.fields_for :spots do |spot_fields| %>
+    <%= render 'edit_spot_fields', f: spot_fields %>
+  <% end %>
+
+  <div class='pt-10 my-20 text-center'>
+    <button class='btn bg-accent-blue text-white px-20 hover:bg-accent-blue hover:opacity-50'>
+      <%= f.submit t('helpers.submit.update') %>
+    </button>
+  </div>
+<% end %>
