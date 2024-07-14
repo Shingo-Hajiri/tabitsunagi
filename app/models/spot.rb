@@ -5,4 +5,5 @@ class Spot < ApplicationRecord
   validates :site_url, length: { maximum: 255 }
 
   belongs_to :plan
+  has_one_attached :image
 end

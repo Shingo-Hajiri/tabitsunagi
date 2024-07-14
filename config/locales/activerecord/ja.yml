@@ -6,8 +6,10 @@ ja:
       plan:
         title: タイトル
         body: 内容
+        thumbnail: サムネイル
       spot:
         store_name: 施設名
         introduction: おすすめポイント
         address: 住所
         site_url: サイトURL
+        image: 画像

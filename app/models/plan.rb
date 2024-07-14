@@ -5,4 +5,5 @@ class Plan < ApplicationRecord
   belongs_to :user
   has_many :spots, dependent: :destroy
   accepts_nested_attributes_for :spots, reject_if: :all_blank, allow_destroy: true
+  has_one_attached :thumbnail
 end
