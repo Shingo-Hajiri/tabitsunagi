@@ -28,8 +28,8 @@ class PlansController < ApplicationController
 
   def plan_params
     params.require(:plan).permit(
-      :title, :body,
-      spots_attributes: [:id, :store_name, :introduction, :address, :site_url]
+      :title, :body, :thumbnail,
+      spots_attributes: [:id, :store_name, :introduction, :address, :site_url, :image]
     )
   end
 end

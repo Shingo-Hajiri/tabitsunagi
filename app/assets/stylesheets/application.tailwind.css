@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.field_with_errors {
+  @apply block w-full m-0 p-0;
+}
+
+.custom-file-input {
+  @apply w-full ;
+}
+
+.custom-file-input::file-selector-button {
+  @apply text-white bg-orange-500; /* ボタンのテキストと背景色を設定 */
+  color: white; /* ボタンのテキストを白色に設定 */
+  background-color: #ffb83d; /* ボタンの背景色を変更 */
+  padding: 0.5rem 1rem; /* ボタンのパディングを設定 */
+  border-style: none;
+}
+
+.custom-file-input::file-selector-button:hover {
+  opacity: 0.5;
+}
