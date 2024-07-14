@@ -15,7 +15,13 @@ Rails.application.routes.draw do
 
   root "tops#top"
 
-  resources :plans, only: %i[index new create]
+  get 'edit_last_plan', to: 'plans#edit_last', as: :edit_last_plan
+
+  resources :plans, only: %i[index new create edit show update destroy] do
+    collection do
+      get :complete
+    end
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"

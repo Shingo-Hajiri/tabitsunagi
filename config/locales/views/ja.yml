@@ -1,4 +1,7 @@
 ja:
+  helpers:
+    submit:
+      update: "更新する"
   tops:
     top:
       title: トップページ
@@ -9,3 +12,11 @@ ja:
       title: みんなのおすすめ旅
     new:
       title: 旅行プランを投稿する
+    complete:
+      title: おすすめ旅を投稿しました！
+      move_on: 画像を投稿
+      return: 一覧へ戻る
+    edit:
+      title: 旅行プランを編集する
+      submit: 更新する
+      
