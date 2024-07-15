@@ -4,6 +4,10 @@ function initializeHamburgerMenu() {
   const menu = document.getElementById('menu');
 
   if (open && close && menu) {
+    open.classList.remove('hidden');
+    close.classList.add('hidden');
+    menu.classList.add('hidden');
+    
     open.addEventListener('click', () => {
       console.log('Open clicked'); 
       open.classList.add('hidden');
