@@ -1,27 +1,47 @@
-<div class='pt-10 sm:mx-32'>
-  <%= f.label :store_name %>
-  <label class='input flex items-center gap-2'>
-    <%= f.text_field :store_name %>
-  </label>
+<div class='spot-fields'>
+  <%= f.hidden_field :_destroy %>
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :store_name %>
+    <label class='input flex items-center gap-2'>
+      <%= f.text_field :store_name, class:'w-full', placeholder:'どこかのたこ焼き屋さん' %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :introduction %>
+    <label class='flex'>
+    <%= f.text_area :introduction, class:'textarea h-24 w-full resize-none text-base', placeholder:'大きなタコが入っていて美味しかった' %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :address %>
+    <label class='input flex items-center gap-2'>
+      <%= f.text_field :address %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :site_url %>
+    <label class='input  flex items-center gap-2'>
+      <%= f.url_field :site_url %>
+    </label>
+  </div>
+  <div class='cursor-pointer remove-spot pt-5 text-right'>
+    <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
+  </div>
 </div>
 
-<div class='pt-10 sm:mx-32'>
-  <%= f.label :introduction %>
-  <label class='flex'>
-  <%= f.text_area :introduction, class:'textarea h-24 w-full resize-none text-base' %>
-  </label>
-</div>
-
-<div class='pt-10 sm:mx-32'>
-  <%= f.label :address %>
-  <label class='input flex items-center gap-2'>
-    <%= f.text_field :address %>
-  </label>
-</div>
-
-<div class='pt-10 sm:mx-32'>
-  <%= f.label :site_url %>
-  <label class='input  flex items-center gap-2'>
-    <%= f.url_field :site_url %>
-  </label>
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.remove-spot').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var spotFields = this.closest('.spot-fields');
+        if (spotFields) {
+          spotFields.querySelector("input[name$='[_destroy]']").value = 'true';
+          spotFields.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
