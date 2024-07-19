@@ -31,17 +31,3 @@
     <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.remove-spot').forEach(function(button) {
-      button.addEventListener('click', function() {
-        var spotFields = this.closest('.spot-fields');
-        if (spotFields) {
-          spotFields.querySelector("input[name$='[_destroy]']").value = 'true';
-          spotFields.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
