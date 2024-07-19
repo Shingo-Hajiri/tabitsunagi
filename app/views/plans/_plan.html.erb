@@ -25,7 +25,11 @@
           <span>東京都</span>
         </div>
         <div class='flex ml-2'>
-          <%= image_tag('sample.jpeg', class: 'w-6 h-6 rounded-full') %>
+          <% if plan.user.avatar.present? %>
+            <%= image_tag(plan.user.avatar, class: 'w-6 h-6 rounded-full') %>
+          <% else %>
+            <%= image_tag('sample.jpeg', class: 'w-6 h-6 rounded-full') %>
+          <% end %>
           <span class='pl-1'><%= plan.user.name %></span>
         </div>
       </div>
