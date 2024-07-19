@@ -35,7 +35,7 @@ class PlansController < ApplicationController
   def update
     @plan = current_user.plans.find(params[:id])
     if @plan.update(plan_params)
-      redirect_to plans_path, notice: '旅行プランを更新しました。'
+      redirect_to plan_path(@plan), notice: '旅行プランを更新しました。'
     else
       flash.now[:alert] = '旅行プランを更新できませんでした。'
       render :edit, status: :unprocessable_entity

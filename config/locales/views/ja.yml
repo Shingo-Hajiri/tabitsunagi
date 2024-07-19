@@ -12,6 +12,8 @@ ja:
       title: みんなのおすすめ旅
     new:
       title: 旅行プランを投稿する
+    show:
+      return: 一覧へ戻る
     edit:
       title: 旅行プランを編集する
       submit: 更新する
@@ -20,4 +22,4 @@ ja:
       move_on: 画像を投稿
       return: 一覧へ戻る
     my_recommends:
-      title: 私の投稿一覧
+      title: 私のおすすめ旅
