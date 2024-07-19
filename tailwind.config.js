@@ -13,7 +13,8 @@ module.exports = {
       colors: {
         'base-orange': '#fff8eb',
         'main-orange': '#ffb83d',
-        'accent-blue': '#3d98ff'
+        'accent-blue': '#3d98ff',
+        'custom-red': '#ed7b7b'
       },
       letterSpacing: {
         'custom': '1em'

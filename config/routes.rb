@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :profile, only: %i[edit show update destroy]
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

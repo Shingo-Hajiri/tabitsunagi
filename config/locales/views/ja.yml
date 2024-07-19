@@ -23,3 +23,8 @@ ja:
       return: 一覧へ戻る
     my_recommends:
       title: 私のおすすめ旅
+  profiles:
+    show:
+      title: プロフィール
+    edit:
+      title: プロフィール編集

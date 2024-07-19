@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @plans = Plan.includes(:user).order(created_at: :desc)
