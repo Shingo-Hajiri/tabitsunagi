@@ -50,6 +50,10 @@ class PlansController < ApplicationController
 
   def complete; end
 
+  def my_recommends
+    @plans = current_user.plans.includes(:user).order(created_at: :desc)
+  end
+
   def edit_last
     @plan = current_user.plans.order(created_at: :desc).first
     if @plan

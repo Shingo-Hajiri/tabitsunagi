@@ -2,7 +2,7 @@
   <div class='card lg:flex-row lg:card-side bg-base-100 shadow-xl md:w-84 lg:w-96 mx-auto'>
   <div class='flex flex-col'>
     <div class='my-3 mx-3 flex-shrink-0'>
-      <%= link_to '#' do %>
+      <%= link_to plan_path(plan) do %>
         <div class='flex'>
           <% if plan.thumbnail.present? %>
             <%= image_tag plan.thumbnail, class: 'w-32 h-32 rounded-lg' %>
@@ -31,7 +31,7 @@
       </div>
       <% if user_signed_in? && current_user.own?(plan) %>
         <div>
-          <%= link_to '#' do %>
+          <%= link_to "https://twitter.com/share?url=#{ plan_url(plan) }&text=【おすすめの旅スポットを投稿しました！！】%0a%0a#{ plan.title }", target: '_blank' do %>
             <i class='fa-brands fa-square-x-twitter fa-lg'></i>
           <% end %>
           <%= link_to edit_plan_path(plan) do %>

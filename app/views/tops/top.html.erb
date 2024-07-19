@@ -1,4 +1,4 @@
-<main class='py-0 px-5 my-0 mx-auto max-w-screen-xl h-screen z-10'>
+<main class='py-0 px-5 my-0 mx-auto max-w-screen-xl h-full z-10'>
   <label class='input input-bordered flex items-center gap-2 mt-6 mb-6  sm:mx-32'>
     <input type='text' class='grow' placeholder='検索ワード' />
     <svg
@@ -12,6 +12,24 @@
         clip-rule='evenodd' />
     </svg>
   </label>
-  <h1 class='text-accent-blue font-bold pt-3 mb-0 mx-auto text-center text-xl'><%= t('.sub_title1') %></h1>
-  <h1 class='text-accent-blue font-bold pt-3 mb-0 mx-auto text-center text-xl'><%= t('.sub_title2') %></h1>
+  <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.sub_title1') %></h1>
+  <div class="mb-10 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3">
+    <% if @new_plans.present? %>
+      <% @new_plans.each do |plan| %>
+        <%= render 'plans/plan', plan: plan %>
+      <% end %>
+    <% else %>
+      <p class='pt-4 pb-5 mb-5 mx-auto text-center'>旅行プランがありません。</p>
+    <% end %>
+  </div>
+  <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.sub_title2') %></h1>
+  <div class="mb-10 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3">
+    <% if @new_plans.present? %>
+      <% @plans.each do |plan| %>
+        <%= render 'plans/plan', plan: plan %>
+      <% end %>
+    <% else %>
+      <p class='pt-4 pb-5 mb-5 mx-auto text-center'>旅行プランがありません。</p>
+    <% end %>
+  </div>
 </main>

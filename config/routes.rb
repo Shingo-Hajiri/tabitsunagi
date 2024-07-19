@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :plans, only: %i[index new create edit show update destroy] do
     collection do
       get :complete
+      get :my_recommends
     end
   end
 

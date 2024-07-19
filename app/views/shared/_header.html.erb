@@ -28,7 +28,7 @@
           <% end %> 
           </li>
           <li><%= link_to '投稿する', new_plan_path %></li>
-          <li><a href='#'>マイ旅行プラン</a></li>
+          <li><%= link_to t('plans.my_recommends.title'), my_recommends_plans_path %></li>
           <li><%= link_to t('plans.index.title'), plans_path %></li>
           <li><%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
           <li><a href='#'>サイトについて</a></li>
@@ -45,9 +45,9 @@
           <% end %> 
           </li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to '投稿する', new_plan_path %></li>
-          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><a href='#'>マイ旅行プラン一覧</a></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.my_recommends.title'), my_recommends_plans_path %></li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.index.title'), plans_path %></li>
-            <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><a href='#'>サイトについて</a></li>
         </ul>
       </nav>

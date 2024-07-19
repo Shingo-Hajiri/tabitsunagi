@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        kiwi: ['Kiwi Maru', 'serif'],
+      },
       colors: {
         'base-orange': '#fff8eb',
         'main-orange': '#ffb83d',

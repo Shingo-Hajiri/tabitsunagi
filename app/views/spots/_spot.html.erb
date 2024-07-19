@@ -1,0 +1,13 @@
+<div class='border-t border-gray-600 sm:mx-32 opacity-25 border-solid'></div>
+<h2 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-left text-xl'><%= spot.store_name %></h2>
+<div>
+  <% if spot.image.present? %>
+    <%= image_tag spot.image, class: 'w-100 h-50 rounded-lg' %>
+  <% else %>
+    <%= image_tag('sample.jpeg', class: 'w-100 h-50 rounded-lg') %>
+  <% end %>
+</div>
+<p class='pt-4 pb-5 mb-5 mx-auto'><%= spot.introduction %></p>
+<div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'></div>
+<p class='pt-4 pb-5 mb-5 mx-auto'>住所:<%= spot.address %></p>
+<p class='pt-4 pb-5 mb-5 mx-auto'>サイトURL:<%= spot.site_url %></p>

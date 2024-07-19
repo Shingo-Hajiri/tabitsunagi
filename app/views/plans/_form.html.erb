@@ -2,14 +2,14 @@
   <div class='pt-10 sm:mx-32'>
     <%= f.label :title %>
     <label class='input flex items-center gap-2'>
-      <%= f.text_field :title, class: 'w-full' %>
+      <%= f.text_field :title, class: 'w-full', placeholder:'日帰り！阪ひとり旅' %>
     </label>
   </div>
 
   <div class='pt-10 mb-10 sm:mx-32'>
     <%= f.label :body %>
     <label class='flex w-full'>
-      <%= f.text_area :body, class:'textarea h-24 w-full resize-none text-base' %>
+      <%= f.text_area :body, class:'textarea h-24 w-full resize-none text-base', placeholder:'いっぱい食べ歩きしてきたよ〜' %>
     </label>
   </div>
 
@@ -17,10 +17,18 @@
   </div>
 
   <h2 class='text-main-orange font-bold pt-3 mt-5 mb-0 mx-auto text-xl sm:text-center'>おすすめスポット</h2>
-
+  <div id='spot-fields-template' style='display: none'>
+    <%= f.fields_for :spots, Spot.new, child_index: 'new_spot' do |spot_fields| %>
+      <%= render 'spot_fields', f: spot_fields %>
+    <% end %>
+  </div>
   <%= f.fields_for :spots do |spot_fields| %>
     <%= render 'spot_fields', f: spot_fields %>
   <% end %>
+  <div id='spots'></div>
+  <div class='text-center cursor-pointer mt-10' id='add-spot'>
+    <i class="fa-solid fa-circle-plus fa-4x" style="color: #3b98ff;"></i>
+  </div>
 
   <div class='pt-10 my-20 text-center'>
     <button class='btn bg-accent-blue text-white px-20 hover:bg-accent-blue hover:opacity-50'>
@@ -28,3 +36,29 @@
     </button>
   </div>
 <% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    function addRemoveButtonEventListeners() {
+      document.querySelectorAll('.remove-spot').forEach(function(button) {
+        button.addEventListener('click', function() {
+          var spotFields = this.closest('.spot-fields');
+          if (spotFields) {
+            spotFields.querySelector("input[name$='[_destroy]']").value = 'true';
+            spotFields.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    document.getElementById("add-spot").addEventListener("click", function(){
+      var content = document.getElementById("spot-fields-template").innerHTML;
+      var uniqueId = new Date().getTime();
+      content = content.replace(/new_spot/g, uniqueId);
+      document.getElementById("spots").insertAdjacentHTML('beforeend', content);
+      addRemoveButtonEventListeners(); // 新しいスポットを追加した後にイベントリスナーを再設定
+    });
+
+    addRemoveButtonEventListeners(); // 初期読み込み時にイベントリスナーを設定
+  });
+</script>
