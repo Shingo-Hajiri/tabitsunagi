@@ -26,8 +26,8 @@
     <%= render 'spot_fields', f: spot_fields %>
   <% end %>
   <div id='spots'></div>
-  <div class='text-center cursor-pointer mt-10' id='add-spot'>
-    <i class="fa-solid fa-circle-plus fa-4x" style="color: #3b98ff;"></i>
+  <div class='text-center mt-10 mx-48' id='add-spot'>
+    <i class="fa-solid fa-circle-plus fa-4x cursor-pointer" style="color: #3b98ff;"></i>
   </div>
 
   <div class='pt-10 my-20 text-center'>
@@ -36,29 +36,3 @@
     </button>
   </div>
 <% end %>
-
-<script>
-  document.addEventListener("turbo:load", function(){
-    function addRemoveButtonEventListeners() {
-      document.querySelectorAll('.remove-spot').forEach(function(button) {
-        button.addEventListener('click', function() {
-          var spotFields = this.closest('.spot-fields');
-          if (spotFields) {
-            spotFields.querySelector("input[name$='[_destroy]']").value = 'true';
-            spotFields.style.display = 'none';
-          }
-        });
-      });
-    }
-
-    document.getElementById("add-spot").addEventListener("click", function(){
-      var content = document.getElementById("spot-fields-template").innerHTML;
-      var uniqueId = new Date().getTime();
-      content = content.replace(/new_spot/g, uniqueId);
-      document.getElementById("spots").insertAdjacentHTML('beforeend', content);
-      addRemoveButtonEventListeners(); // 新しいスポットを追加した後にイベントリスナーを再設定
-    });
-
-    addRemoveButtonEventListeners(); // 初期読み込み時にイベントリスナーを設定
-  });
-</script>
