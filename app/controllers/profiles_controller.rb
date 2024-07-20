@@ -4,7 +4,9 @@ class ProfilesController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    @user.build_profile_image unless @user.profile_image
+  end
 
   def update
     if @user.update(user_params)
@@ -22,6 +24,9 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :avatar)
+    params.require(:user).permit(
+      :name, :email,
+      profile_image_attributes: [:id, :avatar]
+    )
   end
 end

@@ -8,8 +8,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :plans, dependent: :destroy
-
-  has_one_attached :avatar
+  has_one :profile_image, dependent: :destroy
+  accepts_nested_attributes_for :profile_image
 
   def own?(object)
     object&. user_id == id
