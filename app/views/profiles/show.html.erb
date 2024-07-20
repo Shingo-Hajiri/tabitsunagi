@@ -17,7 +17,7 @@
       <p class='pt-10 mb-10'>メールアドレスの変更はこちら →</p>
     <% end %>
     <div class='pt-10 mb-20'>
-      <%= link_to '退会する', '#', class: 'btn bg-custom-red text-white px-20 hover:bg-custom-red hover:opacity-50' %>
+      <%= link_to '退会する', user_registration_path(@user), data: { turbo_method: :delete, turbo_confirm: "今まで投稿も全て消えます。本当に退会しますか？" }, class: 'btn bg-custom-red text-white px-20 hover:bg-custom-red hover:opacity-50' %>
     </div>
   </div>
 </main>
