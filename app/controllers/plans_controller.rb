@@ -59,7 +59,7 @@ class PlansController < ApplicationController
     if @plan
       redirect_to edit_plan_path(@plan)
     else
-      redirect_to root_path, alert: "No articles found."
+      redirect_to root_path, alert: "投稿がありません。"
     end
   end
 

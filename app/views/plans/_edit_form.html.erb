@@ -32,10 +32,18 @@
   </div>
 
   <h2 class='text-main-orange font-bold pt-3 mt-5 mb-0 mx-auto text-xl sm:text-center'>おすすめスポット</h2>
-
+  <div id='spot-fields-template' style='display: none'>
+    <%= f.fields_for :spots, Spot.new, child_index: 'new_spot' do |spot_fields| %>
+      <%= render 'spot_fields', f: spot_fields %>
+    <% end %>
+  </div>
   <%= f.fields_for :spots do |spot_fields| %>
     <%= render 'edit_spot_fields', f: spot_fields %>
   <% end %>
+  <div id='spots'></div>
+  <div class='text-center mt-10' id='add-spot'>
+    <i class="fa-solid fa-circle-plus fa-4x cursor-pointer" style="color: #3b98ff;"></i>
+  </div>
 
   <div class='pt-10 my-20 text-center'>
     <button class='btn bg-accent-blue text-white px-20 hover:bg-accent-blue hover:opacity-50'>

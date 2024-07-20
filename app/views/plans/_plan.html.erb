@@ -5,12 +5,12 @@
       <%= link_to plan_path(plan) do %>
         <div class='flex'>
           <% if plan.thumbnail.present? %>
-            <%= image_tag plan.thumbnail, class: 'w-32 h-32 rounded-lg' %>
+            <%= image_tag plan.thumbnail, class: 'w-32 h-32 object-cover rounded-lg' %>
           <% else %>
             <%= image_tag('sample.jpeg', class: 'w-32 h-32 rounded-lg') %>
           <% end %>
           <div class='flex flex-col justify-between w-full h-32 ml-5 md:w-42 lg:w-48 mx-auto'>
-            <h2 class='text-main-orange font-bold'><%= plan.title %></h2>
+            <h2 class='text-main-orange font-bold'><%= truncate(plan.title, length: 20) %></h2>
             <div  class='text-right text-xs mb-3'>
               <span class='border-b border-gray-600'>詳しく見る →</span>
             </div>
