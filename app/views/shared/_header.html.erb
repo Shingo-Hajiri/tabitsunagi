@@ -6,8 +6,8 @@
     <div class='flex'>
       <%= link_to profile_path, class: 'mr-12' do %>
         <div class='cursor-pointer sm:hidden'>
-          <% if current_user.avatar.present? %>
-            <%= image_tag(current_user.avatar, class: 'w-7 h-7 rounded-full') %>
+          <% if current_user.profile_image&.avatar&.attached? %>
+            <%= image_tag(current_user.profile_image.avatar, class: 'w-7 h-7 rounded-full') %>
           <% else %>
             <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full') %>
           <% end %>
@@ -26,8 +26,8 @@
           <li>
           <%= link_to '#' do %>
             <div class='flex'>
-              <% if current_user.avatar.present? %>
-                <%= image_tag(current_user.avatar, class: 'my-0 mx-auto w-8 h-8 rounded-full') %>
+              <% if current_user.profile_image&.avatar&.attached? %>
+                <%= image_tag current_user.profile_image.avatar, class: 'my-0 mx-auto w-8 h-8 rounded-full' %>
               <% else %>
                 <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-8 h-8 rounded-full') %>
               <% end %>
@@ -48,8 +48,8 @@
         <ul>
           <li class='mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'>
           <%= link_to profile_path do %>
-            <% if current_user.avatar.present? %>
-              <%= image_tag(current_user.avatar, class: 'my-0 mx-auto w-16 h-16 rounded-full') %>
+            <% if current_user.profile_image&.avatar&.attached? %>
+              <%= image_tag(current_user.profile_image.avatar, class: 'my-0 mx-auto w-16 h-16 rounded-full') %>
             <% else %>
               <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-16 h-16 rounded-full') %>
             <% end %>
