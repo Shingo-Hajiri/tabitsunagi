@@ -1,17 +1,4 @@
 <main class='py-0 px-5 my-0 mx-auto max-w-screen-xl h-full z-10'>
-  <label class='input input-bordered flex items-center gap-2 mt-6 mb-6 sm:mx-32'>
-    <input type='text' class='grow' placeholder='検索ワード' />
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 16 16'
-      fill='currentColor'
-      class='h-4 w-4 opacity-70'>
-      <path
-        fill-rule='evenodd'
-        d='M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z'
-        clip-rule='evenodd' />
-    </svg>
-  </label>
   <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.title') %></h1>
   <% if @plans.present? %>
   <div class="mb-10 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3">

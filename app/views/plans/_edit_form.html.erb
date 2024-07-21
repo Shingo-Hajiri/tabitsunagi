@@ -37,9 +37,9 @@
       <%= render 'spot_fields', f: spot_fields %>
     <% end %>
   </div>
-  <%= f.fields_for :spots do |spot_fields| %>
-    <%= render 'edit_spot_fields', f: spot_fields %>
-  <% end %>
+    <%= f.fields_for :spots do |spot_fields| %>
+      <%= render 'edit_spot_fields', f: spot_fields %>
+    <% end %>
   <div id='spots'></div>
   <div class='text-center mt-10' id='add-spot'>
     <i class="fa-solid fa-circle-plus fa-4x cursor-pointer" style="color: #3b98ff;"></i>

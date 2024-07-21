@@ -31,5 +31,13 @@
   <div class='flex'>
     <%= f.file_field :image, class: 'w-full, file-input border-none custom-file-input' %>
   </div>
-  <div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'></div>
+  <div class='sm:mx-32'>
+    <% if f.object.image&.attached? %>
+      <p>現在の画像</p>
+      <div>
+        <%= image_tag f.object.image, class: 'w-32 h-32 rounded-lg' %>
+      </div>
+    <% end %>
+  </div>
 </div>
+  <div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'></div>
