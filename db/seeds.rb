@@ -21,7 +21,7 @@ User.create!(name: 'しんご',
               password: password,
               password_confirmation: password)
   User.all.each do |user|
-    title = "sumple#{user.id}"
+    title = Faker::Food.allergen
     body = "本文#{user.id}"
     user_id = "#{user.id}"
     Plan.create!(title: title,

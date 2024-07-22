@@ -1,7 +1,7 @@
 <div class='pt-10 sm:mx-32'>
   <%= f.label :store_name %>
   <label class='input flex items-center gap-2'>
-    <%= f.text_field :store_name, class:'w-full', placeholder:'どこかのたこ焼き屋さん' %>
+    <%= f.text_field :store_name, id: 'store', class:'w-full', placeholder:'どこかのたこ焼き屋さん' %>
   </label>
 </div>
 
@@ -12,17 +12,17 @@
   </label>
 </div>
 
-<div class='pt-10 sm:mx-32'>
+<div class='pt-10 sm:mx-32' style='display: none;'>
   <%= f.label :address %>
   <label class='input flex items-center gap-2'>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, id: 'address' %>
   </label>
 </div>
 
-<div class='pt-10 sm:mx-32'>
+<div class='pt-10 sm:mx-32' style='display: none;'>
   <%= f.label :site_url %>
   <label class='input  flex items-center gap-2'>
-    <%= f.url_field :site_url %>
+    <%= f.url_field :site_url, id: 'url' %>
   </label>
 </div>
 

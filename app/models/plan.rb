@@ -11,7 +11,22 @@ class Plan < ApplicationRecord
     # 検索対象としたい属性を列挙します
     ["title", "body", "created_at", "updated_at", "user_id"]
   end
+
   def self.ransackable_associations(auth_object = nil)
     ["spots", "thumbnail_attachment", "thumbnail_blob", "user"]
+  end
+
+  def first_spot_address
+    return '' unless spots.any?
+    prefectures_processing(spots.first.address)
+  end
+
+  private
+
+  def prefectures_processing(address)
+    # オートコンプリート機能を使用しなかった場合、住所が空白になることがあるのでnilも考慮しないといけない
+    return '日本' if address.nil?
+    prefecture_pattern = /(東京都|北海道|(?:京都|大阪)府|.{2,3}県)/
+    match = address.match(prefecture_pattern)
   end
 end
