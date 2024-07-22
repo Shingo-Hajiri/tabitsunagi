@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initialize&libraries=places&v=weekly" defer></script>
   </head>
 
   <body class='font-kiwi bg-base-orange text-gray-600 tracking-widest'>

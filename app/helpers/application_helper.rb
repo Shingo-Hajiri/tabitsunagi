@@ -7,4 +7,9 @@ module ApplicationHelper
     else "bg-gray-500"
     end
   end
+
+  def address_processing(address)
+    address = address
+    address.gsub(/日本、/, '')
+  end
 end
