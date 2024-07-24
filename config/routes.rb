@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
   }, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -24,7 +25,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :profile, only: %i[edit show update destroy]
+  resource :profile, only: %i[edit show update destroy] do
+    member do
+      get :email_edit
+    end
+  end
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   # Defines the root path route ("/")
   # root "posts#index"

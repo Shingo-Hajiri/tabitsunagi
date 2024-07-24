@@ -31,7 +31,7 @@ ja:
       user: ユーザー
   devise:
     confirmations:
-      confirmed: メールアドレスが確認できました。
+      confirmed: メールアドレスが変更できました。
       new:
         resend_confirmation_instructions: アカウント確認メール再送
       send_instructions: アカウントの有効化について数分以内にメールでご連絡します。
@@ -51,7 +51,7 @@ ja:
         action: メールアドレスの確認
         greeting: "%{recipient}様"
         instruction: 以下のリンクをクリックし、メールアドレスの確認手続を完了させてください。
-        subject: メールアドレス確認メール
+        subject: 【旅つなぎ】メールアドレス確認メール
       email_changed:
         greeting: こんにちは、%{recipient}様。
         message: メールアドレスの（%{email}）変更が完了したため、メールを送信しています。
@@ -67,7 +67,7 @@ ja:
         instruction: パスワード再設定の依頼を受けたため、メールを送信しています。下のリンクからパスワードの再設定ができます。
         instruction_2: パスワード再設定の依頼をしていない場合、このメールを無視してください。
         instruction_3: パスワードの再設定は、上のリンクから新しいパスワードを登録するまで完了しません。
-        subject: パスワードの再設定について
+        subject: 【旅つなぎ】パスワードの再設定について
       unlock_instructions:
         action: アカウントのロック解除
         greeting: "%{recipient}様"

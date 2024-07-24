@@ -10,7 +10,8 @@
 User.create!(name: 'しんご',
             email: 's.h.920.49@gmail.com',
             password: 'test1234',
-            password_confirmation: 'test1234')
+            password_confirmation: 'test1234',
+            confirmed_at: Time .now.utc)
 
 20.times do |n|
   name = Faker::Name.name
@@ -35,7 +36,8 @@ User.create!(name: 'しんご',
     plan_id = "#{plan.id}"
     Spot.create!(store_name: store_name,
                 introduction: introduction,
-                plan_id: plan_id
+                plan_id: plan_id,
+                confirmed_at: Time .now.utc
     )
   end
 end

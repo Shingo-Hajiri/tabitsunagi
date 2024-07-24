@@ -1,0 +1,26 @@
+<main class='py-0 px-5 my-0 mx-auto max-w-screen-xl h-full z-10'>
+  <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.title') %></h1>
+  <%= form_with model: @user, url: profile_path, data: { turbo_method: :put }, local: true do |f| %>
+
+    <div class="pt-10 sm:mx-32">
+      <%= f.label :email %>
+      <label class="input flex items-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          class="h-4 w-4 opacity-70">
+          <path
+            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+        </svg>
+        <%= f.email_field :email, class: "w-full" %>
+      </label>
+    </div>
+
+    <div class='pt-10 my-20 text-center'>
+      <button class="btn bg-accent-blue text-white px-20 hover:bg-accent-blue hover:opacity-50">
+        <%= f.submit "変更メールを送信する" %>
+      </button>
+    </div>
+  <% end %>
+</main>
