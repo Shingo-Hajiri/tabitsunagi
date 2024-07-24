@@ -9,5 +9,9 @@
 </div>
 <p class='pt-4 pb-5 mb-5 mx-auto'><%= spot.introduction %></p>
 <div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'></div>
-<p class='pt-4 pb-5 mb-5 mx-auto'>住所:<br><%= address_processing(spot.address) %></p>
+<p class='pt-4 pb-5 mb-5 mx-auto'>住所:<br>
+  <% if spot.address.present? %>
+    <%= address_processing(spot.address) %>
+  <% end %>
+</p>
 <p class='pt-4 pb-5 mb-5 mx-auto break-words'>サイトURL:<br><%= link_to spot.site_url, spot.site_url, class: 'text-accent-blue hover:opacity-50', target: '_blank' %></p>

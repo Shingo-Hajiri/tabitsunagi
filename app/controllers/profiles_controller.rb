@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: %i[edit update]
+  before_action :set_user, only: %i[edit update email_edit]
 
   def show; end
 
@@ -10,12 +10,14 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to profile_path, notice: 'プロフィールを更新しました。'
+      redirect_to profile_path
     else
       flash.now[:alert] = 'プロフィールを更新できませんでした。'
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def email_edit; end
 
   private
 

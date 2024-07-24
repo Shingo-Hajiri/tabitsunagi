@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
   
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :plans, dependent: :destroy
   has_one :profile_image, dependent: :destroy
