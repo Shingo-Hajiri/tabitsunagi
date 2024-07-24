@@ -20,7 +20,8 @@ User.create!(name: 'しんご',
   User.create!(name: name,
               email: email,
               password: password,
-              password_confirmation: password)
+              password_confirmation: password,
+              confirmed_at: Time .now.utc)
   User.all.each do |user|
     title = Faker::Food.allergen
     body = "本文#{user.id}"
@@ -36,8 +37,7 @@ User.create!(name: 'しんご',
     plan_id = "#{plan.id}"
     Spot.create!(store_name: store_name,
                 introduction: introduction,
-                plan_id: plan_id,
-                confirmed_at: Time .now.utc
+                plan_id: plan_id
     )
   end
 end

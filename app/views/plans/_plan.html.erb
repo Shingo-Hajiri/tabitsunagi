@@ -22,15 +22,15 @@
       <div class='flex'>
         <div>
           <i class='fa-solid fa-location-dot fa-lg' style='color: #ffb83d;'></i>
-          <span><%= plan.first_spot_address %></span>
+          <span class='text-xs'><%= plan.first_spot_address %></span>
         </div>
         <div class='flex ml-2'>
           <% if plan.user.profile_image&.avatar&.attached? %>
-            <%= image_tag(plan.user.profile_image.avatar, class: 'w-6 h-6 rounded-full') %>
+            <%= image_tag(plan.user.profile_image.avatar, class: 'w-7 h-7 rounded-full mt-1') %>
           <% else %>
-            <%= image_tag('sample.jpeg', class: 'w-6 h-6 rounded-full') %>
+            <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full') %>
           <% end %>
-          <span class='pl-1'><%= plan.user.name %></span>
+          <span class='pl-1 text-xs leading-7'><%= truncate(plan.user.name, length: 6) %></span>
         </div>
       </div>
       <% if user_signed_in? && current_user.own?(plan) %>
