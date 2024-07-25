@@ -7,7 +7,7 @@
         <%= render 'plans/plan', plan: plan %>
       <% end %>
     <% else %>
-      <p class='pt-4 pb-5 mb-5 mx-auto text-center'>旅行プランがありません。</p>
+      <p class='pt-4 pb-5 mb-5 mx-auto text-center'><%= t('.no_plans') %></p>
     <% end %>
   </div>
   <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.sub_title2') %></h1>
@@ -17,7 +17,7 @@
         <%= render 'plans/plan', plan: plan %>
       <% end %>
     <% else %>
-      <p class='pt-4 pb-5 mb-5 mx-auto text-center'>旅行プランがありません。</p>
+      <p class='pt-4 pb-5 mb-5 mx-auto text-center'><%= t('.no_plans') %></p>
     <% end %>
   </div>
 </main>

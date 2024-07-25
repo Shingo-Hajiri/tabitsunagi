@@ -12,7 +12,7 @@
           <div class='flex flex-col justify-between w-full h-32 ml-5 md:w-42 lg:w-48 mx-auto'>
             <h2 class='text-main-orange font-bold'><%= truncate(plan.title, length: 20) %></h2>
             <div  class='text-right text-xs mb-3'>
-              <span class='border-b border-gray-600'>詳しく見る →</span>
+              <span class='border-b border-gray-600'><%= t('.see_in_detail') %></span>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
           <%= link_to edit_plan_path(plan) do %>
             <i class='fa-solid fa-pen-to-square fa-lg ml-5' style='color: #3d98ff;'></i>
           <% end %>
-          <%= link_to plan_path(plan), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } do %>
+          <%= link_to plan_path(plan), data: { turbo_method: :delete, turbo_confirm: t('.deleting_confirmation') } do %>
             <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
           <% end %>
         </div>

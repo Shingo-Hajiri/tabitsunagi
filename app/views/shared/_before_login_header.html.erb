@@ -1,7 +1,7 @@
 <header class='py-0 px-5 my-0 mx-auto max-w-screen-xl'>
   <div class='flex justify-between py-5 px-0'>
   <%= link_to root_path do %>
-    <h1 class='m-0 font-black text-xl'>旅つなぎ</h1>
+    <h1 class='m-0 font-black text-xl'><%= t('.title') %></h1>
   <% end %>
     <div class='flex'>
       <%= link_to user_session_path, class: 'mr-12' do %>
@@ -20,14 +20,14 @@
       <nav>
         <ul class='flex space-x-4 text-sm leading-8'>
           <li><%= link_to t('plans.index.title'), plans_path %></li>
-          <li><%= link_to '投稿する', new_plan_path %></li>
+          <li><%= link_to t('.post_menu'), new_plan_path %></li>
           <%= link_to new_user_registration_path do %>
             <li><%= t('devise.registrations.new.title') %></li>
           <% end %>
           <%= link_to user_session_path do %>
             <li><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
-          <li><%= link_to 'サイトについて', usage_path %></li>
+          <li><%= link_to t('static_pages.usage.title'), usage_path %></li>
         </ul>
       </nav>
     </div>
@@ -35,14 +35,14 @@
       <nav>
         <ul>
           <li class='mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.index.title'), plans_path %></li>
-          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to '投稿する', new_plan_path %></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('.post_menu'), new_plan_path %></li>
           <%= link_to new_user_registration_path do %>
             <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= t('devise.registrations.new.title') %></li>
           <% end %>
           <%= link_to user_session_path do %>
             <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
-          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to 'サイトについて', usage_path %></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('static_pages.usage.title'), usage_path %></li>
         </ul>
       </nav>
     </div>

@@ -1,5 +1,5 @@
 <div class="py-0 px-5 my-0 mx-auto max-w-screen-xl">
-  <h1 class="text-accent-blue font-bold pt-3 mb-0 mx-auto text-center text-xl">パスワード再設定</h1>
+  <h1 class="text-accent-blue font-bold pt-3 mb-0 mx-auto text-center text-xl"><%= t('.title') %></h1>
 
   <%= form_with model: @user, url: password_path(resource_name), method: :put, local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -8,7 +8,7 @@
     <div class="pt-10 sm:mx-32">
       <%= f.label :password, "新しいパスワード" %>
       <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(<%= @minimum_password_length %> <%= t('.minimum_password_length') %>)</em>
       <% end %>
       <label class="input input-bordered flex items-center gap-2">
       <svg
@@ -26,7 +26,7 @@
     </div>
 
     <div class="pt-10 sm:mx-32">
-      <%= f.label :password_confirmation, "新しいパスワード(確認用)" %>
+      <%= f.label :password_confirmation, t('.confirm_new_password') %>
       <label class="input input-bordered flex items-center gap-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@
 
     <div class="pt-10 text-center">
       <button class="btn bg-main-orange text-white px-20 mb-10 hover:bg-main-orange hover:opacity-50">
-        <%= f.submit "パスワードを変更する" %>
+        <%= f.submit t('.button') %>
       </button>
     </div>
   <% end %>

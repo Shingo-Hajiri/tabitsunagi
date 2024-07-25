@@ -1,37 +1,91 @@
 ja:
   helpers:
     submit:
-      update: "更新する"
+      update: 更新する
   tops:
     top:
       title: トップページ
       sub_title1: 新着
       sub_title2: おすすめスポット10選
+      no_plans: おすすめ旅がありません。
   plans:
     index:
-      title: みんなのおすすめ旅
+      title: みんなのおすすめ旅 
+      no_plans: おすすめ旅がありません。
     new:
-      title: 旅行プランを投稿する
+      title: おすすめ旅を投稿する
+    create:
+      success: おすすめ旅を投稿しました！
+      failure: おすすめ旅を投稿できませんでした。
     show:
       return: 一覧へ戻る
+      deleting_confirmation: 本当に削除しますか？
     edit:
       title: 旅行プランを編集する
       submit: 更新する
+    update:
+      success: おすすめ旅を更新しました！
+      failure: おすすめ旅を更新できませんでした。
+    destroy:
+      success: おすすめ旅を削除しました。
     complete:
       title: おすすめ旅を投稿しました！
       move_on: 画像を投稿
+      text: 画像を投稿してあなたのおすすめスポットの魅力をもっと伝えよう！
       return: 一覧へ戻る
     my_recommends:
       title: 私のおすすめ旅
+      no_plans: おすすめ旅がありません。
+    edit_last:
+      failure: 投稿がありません。
+    edit_form:
+      current_image: 現在の画像
+      title: おすすめスポット
+      title_placeholder: 日帰り！大阪ひとり旅
+      body_placeholder: アメ村で食べ歩き〜
+      button: 更新する
+    edit_spot_fields:
+      store_name_placeholder: どこかのたこ焼き屋さん
+      introduction_placeholder: 大きなタコが入っていて美味しかった♪
+      current_image: 現在の画像
+    form:
+      title: おすすめスポット
+      title_placeholder: 日帰り！大阪ひとり旅
+      body_placeholder: アメ村で食べ歩き〜
+      button: 投稿する
+    plan:
+      see_in_detail: 詳しく見る →
+      deleting_confirmation: 本当に削除しますか？
+    spot_fields:
+      store_name_placeholder: どこかのたこ焼き屋さん
+      introduction_placeholder: 大きなタコが入っていて美味しかった♪
   profiles:
     show:
       title: プロフィール
+      edit_button: 編集する
+      unsubscribe_button: 退会する
+      deleting_confirmation: 今まで投稿も全て消えます。本当に退会しますか？
     edit:
       title: プロフィール編集
+      button: 更新する
+    update:
+      success: プロフィールを更新しました！
+      failure: プロフィールを更新できませんでした。
     email_edit:
       title: メールアドレス変更
+      button: メールを送信する
   static_pages:
     usage:
       title: サイトについて
+      post: 投稿する
       account_registration: ログインして投稿する
       List_of_posts: みんなの投稿を見る
+  shared:
+    before_login_header:
+      title: 旅つなぎ
+      post_menu: 投稿する
+    header:
+      title: 旅つなぎ
+      post_menu: 投稿する
+    search:
+      search_placeholder: おすすめ旅スポットを探す
