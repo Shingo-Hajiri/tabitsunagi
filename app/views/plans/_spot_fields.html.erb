@@ -3,14 +3,14 @@
   <div class='pt-10 sm:mx-32'>
     <%= f.label :store_name %>
     <label class='input flex items-center gap-2'>
-      <%= f.text_field :store_name, id: 'store', class:'w-full', placeholder:'どこかのたこ焼き屋さん', autocomplete: 'off' %>
+      <%= f.text_field :store_name, id: 'store', class:'w-full', placeholder: t('.store_name_placeholder'), autocomplete: 'off' %>
     </label>
   </div>
 
   <div class='pt-10 sm:mx-32'>
     <%= f.label :introduction %>
     <label class='flex'>
-    <%= f.text_area :introduction, class:'textarea h-24 w-full resize-none text-base', placeholder:'大きなタコが入っていて美味しかった' %>
+    <%= f.text_area :introduction, class:'textarea h-24 w-full resize-none text-base', placeholder: t('.introduction_placeholder') %>
     </label>
   </div>
 

@@ -18,12 +18,12 @@ class PlansController < ApplicationController
   def create
     @plan = current_user.plans.build(plan_params)
     if @plan.save
-      redirect_to complete_plans_path, notice: '旅行プランを投稿しました。'
+      redirect_to complete_plans_path, notice: t('.success')
     else
       if @plan.spots.empty?
         @plan.spots.build
       end
-      flash.now[:alert] = '旅行プランを投稿できませんでした。'
+      flash.now[:alert] = t('.failure')
       render :new, status: :unprocessable_entity
     end
   end
@@ -35,9 +35,9 @@ class PlansController < ApplicationController
   def update
     @plan = current_user.plans.find(params[:id])
     if @plan.update(plan_params)
-      redirect_to plan_path(@plan), notice: '旅行プランを更新しました。'
+      redirect_to plan_path(@plan), notice: t('.success')
     else
-      flash.now[:alert] = '旅行プランを更新できませんでした。'
+      flash.now[:alert] = t('.failure')
       render :edit, status: :unprocessable_entity
     end
   end
@@ -45,7 +45,7 @@ class PlansController < ApplicationController
   def destroy
     @plan = current_user.plans.find(params[:id])
     @plan.destroy!
-    redirect_to plans_path, notice: '旅行プランを削除しました。', status: :see_other
+    redirect_to plans_path, notice: t('.success'), status: :see_other
   end
 
   def complete; end
@@ -59,7 +59,7 @@ class PlansController < ApplicationController
     if @plan
       redirect_to edit_plan_path(@plan)
     else
-      redirect_to root_path, alert: "投稿がありません。"
+      redirect_to root_path, alert: t('.failure')
     end
   end
 
