@@ -10,6 +10,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <script async
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initialize&libraries=places&v=weekly" defer></script>
+    
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-119Y04LP59"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-119Y04LP59');
+    </script>
   </head>
 
   <body class='font-kiwi bg-base-orange text-gray-600 tracking-widest'>
