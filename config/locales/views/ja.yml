@@ -28,3 +28,10 @@ ja:
       title: プロフィール
     edit:
       title: プロフィール編集
+    email_edit:
+      title: メールアドレス変更
+  static_pages:
+    usage:
+      title: サイトについて
+      account_registration: ログインして投稿する
+      List_of_posts: みんなの投稿を見る

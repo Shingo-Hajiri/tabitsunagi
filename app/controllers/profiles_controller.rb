@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to profile_path
+      redirect_to profile_path, notice: 'プロフィールを更新しました。'
     else
       flash.now[:alert] = 'プロフィールを更新できませんでした。'
       render :edit, status: :unprocessable_entity
