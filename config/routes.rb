@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   root "tops#top"
 
   get 'edit_last_plan', to: 'plans#edit_last', as: :edit_last_plan
+  get 'usage', to: 'static_pages#usage'
 
   resources :plans, only: %i[index new create edit show update destroy] do
     collection do

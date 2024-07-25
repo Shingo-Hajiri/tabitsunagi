@@ -27,7 +27,7 @@
           <%= link_to user_session_path do %>
             <li><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
-          <li><a href='#'>サイトについて</a></li>
+          <li><%= link_to 'サイトについて', usage_path %></li>
         </ul>
       </nav>
     </div>
@@ -42,7 +42,7 @@
           <%= link_to user_session_path do %>
             <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= t('devise.sessions.new.sign_in') %></li>
           <% end %>
-          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><a href='#'>サイトについて</a></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to 'サイトについて', usage_path %></li>
         </ul>
       </nav>
     </div>

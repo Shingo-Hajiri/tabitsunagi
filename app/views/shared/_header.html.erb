@@ -29,7 +29,7 @@
       <nav>
         <ul class='flex space-x-4 text-sm leading-8'>
           <li>
-          <%= link_to '#' do %>
+          <%= link_to profile_path do %>
             <div class='flex'>
               <% if current_user.profile_image&.avatar&.attached? %>
                 <%= image_tag current_user.profile_image.avatar, class: 'my-0 mx-auto w-8 h-8 rounded-full' %>
@@ -44,7 +44,7 @@
           <li><%= link_to t('plans.my_recommends.title'), my_recommends_plans_path %></li>
           <li><%= link_to t('plans.index.title'), plans_path %></li>
           <li><%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
-          <li><a href='#'>サイトについて</a></li>
+          <li><%= link_to 'サイトについて', usage_path %></li>
         </ul>
       </nav>
     </div>
@@ -65,7 +65,7 @@
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.my_recommends.title'), my_recommends_plans_path %></li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.index.title'), plans_path %></li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
-          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><a href='#'>サイトについて</a></li>
+          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to 'サイトについて', usage_path %></li>
         </ul>
       </nav>
     </div>

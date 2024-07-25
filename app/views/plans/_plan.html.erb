@@ -26,7 +26,7 @@
         </div>
         <div class='flex ml-2'>
           <% if plan.user.profile_image&.avatar&.attached? %>
-            <%= image_tag(plan.user.profile_image.avatar, class: 'w-7 h-7 rounded-full mt-1') %>
+            <%= image_tag(plan.user.profile_image.avatar, class: 'w-7 h-7 rounded-full') %>
           <% else %>
             <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full') %>
           <% end %>
