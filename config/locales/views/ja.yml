@@ -80,6 +80,8 @@ ja:
       post: 投稿する
       account_registration: ログインして投稿する
       List_of_posts: みんなの投稿を見る
+    privacy:
+      title: プライバシーポリシー
   shared:
     before_login_header:
       title: 旅つなぎ
