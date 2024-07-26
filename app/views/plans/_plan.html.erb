@@ -1,52 +1,52 @@
 <div class='mb-5 mx-5'>
-  <div class='card lg:flex-row lg:card-side bg-base-100 shadow-xl md:w-84 lg:w-96 mx-auto'>
-  <div class='flex flex-col'>
-    <div class='my-3 mx-3 flex-shrink-0'>
-      <%= link_to plan_path(plan) do %>
-        <div class='flex'>
-          <% if plan.thumbnail.present? %>
-            <%= image_tag plan.thumbnail, class: 'w-32 h-32 object-cover rounded-lg' %>
-          <% else %>
-            <%= image_tag('sample.jpeg', class: 'w-32 h-32 rounded-lg') %>
-          <% end %>
-          <div class='flex flex-col justify-between w-full h-32 ml-5 md:w-42 lg:w-48 mx-auto'>
-            <h2 class='text-main-orange font-bold'><%= truncate(plan.title, length: 20) %></h2>
-            <div  class='text-right text-xs mb-3'>
-              <span class='border-b border-gray-600'><%= t('.see_in_detail') %></span>
+  <div class='card lg:flex-row lg:card-side bg-white shadow-xl md:w-84 lg:w-96 mx-auto'>
+    <div class='flex flex-col'>
+      <div class='my-3 mx-3 flex-shrink-0'>
+        <%= link_to plan_path(plan) do %>
+          <div class='flex'>
+            <% if plan.thumbnail.present? %>
+              <%= image_tag plan.thumbnail, class: 'w-32 h-32 object-cover rounded-lg' %>
+            <% else %>
+              <%= image_tag('sample.jpeg', class: 'w-32 h-32 rounded-lg') %>
+            <% end %>
+            <div class='flex flex-col justify-between w-full h-32 ml-5 md:w-42 lg:w-48 mx-auto'>
+              <h2 class='text-main-orange font-bold'><%= truncate(plan.title, length: 20) %></h2>
+              <div  class='text-right text-xs mb-3'>
+                <span class='border-b border-gray-600'><%= t('.see_in_detail') %></span>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <div  class='flex justify-between mb-3 mx-3 flex-grow'>
-      <div class='flex'>
-        <div>
-          <i class='fa-solid fa-location-dot fa-lg' style='color: #ffb83d;'></i>
-          <span class='text-xs'><%= plan.first_spot_address %></span>
-        </div>
-        <div class='flex ml-2'>
-          <% if plan.user.profile_image&.avatar&.attached? %>
-            <%= image_tag(plan.user.profile_image.avatar, class: 'w-7 h-7 rounded-full') %>
-          <% else %>
-            <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full') %>
-          <% end %>
-          <span class='pl-1 text-xs leading-7'><%= truncate(plan.user.name, length: 6) %></span>
-        </div>
+        <% end %>
       </div>
-      <% if user_signed_in? && current_user.own?(plan) %>
-        <div>
-          <%= link_to "https://twitter.com/share?url=#{ plan_url(plan) }&text=【おすすめの旅スポットを投稿しました！！】%0a%0a#{ plan.title }", target: '_blank' do %>
-            <i class='fa-brands fa-square-x-twitter fa-lg'></i>
-          <% end %>
-          <%= link_to edit_plan_path(plan) do %>
-            <i class='fa-solid fa-pen-to-square fa-lg ml-5' style='color: #3d98ff;'></i>
-          <% end %>
-          <%= link_to plan_path(plan), data: { turbo_method: :delete, turbo_confirm: t('.deleting_confirmation') } do %>
-            <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
-          <% end %>
+      <div  class='flex justify-between mb-3 mx-3 flex-grow'>
+        <div class='flex'>
+          <div>
+            <i class='fa-solid fa-location-dot fa-lg' style='color: #ffb83d;'></i>
+            <span class='text-xs'><%= plan.first_spot_address %></span>
+          </div>
+          <div class='flex ml-2'>
+            <% if plan.user.profile_image&.avatar&.attached? %>
+              <%= image_tag(plan.user.profile_image.avatar, class: 'w-7 h-7 rounded-full') %>
+            <% else %>
+              <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full') %>
+            <% end %>
+            <span class='pl-1 text-xs leading-7'><%= truncate(plan.user.name, length: 6) %></span>
+          </div>
         </div>
-      <% end %>
+        <% if user_signed_in? && current_user.own?(plan) %>
+          <div>
+            <%= link_to "https://twitter.com/share?url=#{ plan_url(plan) }&text=【おすすめの旅スポットを投稿しました！！】%0a%0a#{ plan.title }", target: '_blank' do %>
+              <i class='fa-brands fa-square-x-twitter fa-lg'></i>
+            <% end %>
+            <%= link_to edit_plan_path(plan) do %>
+              <i class='fa-solid fa-pen-to-square fa-lg ml-5' style='color: #3d98ff;'></i>
+            <% end %>
+            <%= link_to plan_path(plan), data: { turbo_method: :delete, turbo_confirm: t('.deleting_confirmation') } do %>
+              <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
   </div>
 </div>

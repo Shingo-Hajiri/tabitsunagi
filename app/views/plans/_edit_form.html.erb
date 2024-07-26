@@ -1,7 +1,7 @@
 <%= form_with model: @plan do |f| %>
   <div class='pt-10 sm:mx-32'>
     <%= f.label :title %>
-    <label class='input flex items-center gap-2'>
+    <label class='input flex items-center gap-2 bg-white'>
       <%= f.text_field :title, class: 'w-full', placeholder: t('.title_placeholder') %>
     </label>
   </div>
@@ -9,7 +9,7 @@
   <div class='pt-10 sm:mx-32'>
     <%= f.label :thumbnail %>
     <div class='flex'>
-      <%= f.file_field :thumbnail, direct_upload: true, class: 'w-full file-input border-none custom-file-input' %>
+      <%= f.file_field :thumbnail, direct_upload: true, class: 'w-full file-input border-none custom-file-input bg-white' %>
     </div>
   </div>
   <div class='sm:mx-32'>
@@ -24,7 +24,7 @@
   <div class='pt-10 mb-10 sm:mx-32'>
     <%= f.label :body %>
     <label class='flex w-full'>
-      <%= f.text_area :body, class:'textarea h-24 w-full resize-none text-base', placeholder: t('.body_placeholder') %>
+      <%= f.text_area :body, class:'textarea h-24 w-full resize-none text-base bg-white', placeholder: t('.body_placeholder') %>
     </label>
   </div>
 
