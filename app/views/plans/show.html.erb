@@ -23,7 +23,7 @@
       <% end %>
     </div>
     <p class='pt-4 pb-5 mb-5 mx-auto'><%= @plan.body %></p>
-    <% @plan.spots.each do |spot| %>
+    <% @plan.spots..order(:id).each do |spot| %>
       <%= render spot %>
     <% end %>
   </div>
