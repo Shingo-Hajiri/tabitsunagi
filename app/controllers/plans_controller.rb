@@ -13,7 +13,6 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
-    @spots = @plan.spots.order(:id)
   end
 
   def create
