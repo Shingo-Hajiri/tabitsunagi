@@ -14,4 +14,10 @@
     <%= address_processing(spot.address) %>
   <% end %>
 </p>
-<p class='pt-4 pb-5 mb-5 mx-auto break-words'>サイトURL:<br><%= link_to spot.site_url, spot.site_url, class: 'text-accent-blue hover:opacity-50', target: '_blank' %></p>
+<p class='pt-4 pb-5 mb-5 mx-auto break-words'>サイトURL:<br>
+  <% if spot.site_url == 'undefined' %>
+    <%= 'URLがありません。' %>
+  <% else %>
+    <%= link_to spot.site_url, spot.site_url, class: 'text-accent-blue hover:opacity-50', target: '_blank' %>
+  <% end %>
+</p>
