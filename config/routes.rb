@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'edit_last_plan', to: 'plans#edit_last', as: :edit_last_plan
   get 'usage', to: 'static_pages#usage'
+  get 'inquiry', to: 'static_pages#inquiry'
+  get 'privacy', to: 'static_pages#privacy'
 
   resources :plans, only: %i[index new create edit show update destroy] do
     collection do
