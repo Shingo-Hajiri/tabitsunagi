@@ -14,7 +14,7 @@
       <% if current_user.profile_image&.avatar&.attached? %>
         <p>現在の画像</p>
         <div>
-          <%= image_tag current_user.profile_image.avatar, class: 'w-32 h-32 rounded-lg' %>
+          <%= image_tag current_user.profile_image.avatar, class: 'w-32 h-32 rounded-lg object-cover' %>
         </div>
       <% end %>
     </div>

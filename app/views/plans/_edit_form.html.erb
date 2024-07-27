@@ -16,7 +16,7 @@
     <% if plan.thumbnail.present? %>
       <p><%= t('.current_image') %></p>
       <div>
-        <%= image_tag plan.thumbnail, class: 'w-32 h-32 rounded-lg' %>
+        <%= image_tag plan.thumbnail, class: 'w-32 h-32 rounded-lg object-cover' %>
       </div>
     <% end %>
   </div>
