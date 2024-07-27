@@ -2,7 +2,7 @@
   <%= render 'shared/search', q: @q, url: plans_path %>
   <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.title') %></h1>
   <% if @plans.present? %>
-  <div class="mb-10 md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3">
+  <div class="mb-10 md:grid md:grid-cols-2 md:gap-4">
     <% if @search_plans %>
       <% if @search_plans.present? %>
         <%= render @search_plans %>

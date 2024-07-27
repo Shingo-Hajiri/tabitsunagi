@@ -5,9 +5,9 @@
         <%= link_to plan_path(plan) do %>
           <div class='flex'>
             <% if plan.thumbnail.present? %>
-              <%= image_tag plan.thumbnail, class: 'w-32 h-32 object-cover rounded-lg' %>
+              <%= image_tag plan.thumbnail, class: 'w-32 h-32 object-cover rounded-lg object-cover' %>
             <% else %>
-              <%= image_tag('sample.jpeg', class: 'w-32 h-32 rounded-lg') %>
+              <%= image_tag('sample.jpeg', class: 'w-32 h-32 rounded-lg object-cover') %>
             <% end %>
             <div class='flex flex-col justify-between w-full h-32 ml-5 md:w-42 lg:w-48 mx-auto'>
               <h2 class='text-main-orange font-bold'><%= truncate(plan.title, length: 20) %></h2>
@@ -18,7 +18,7 @@
           </div>
         <% end %>
       </div>
-      <div  class='flex justify-between mb-3 mx-3 flex-grow'>
+      <div class='flex justify-between mb-3 mx-3 flex-grow'>
         <div class='flex'>
           <div>
             <i class='fa-solid fa-location-dot fa-lg' style='color: #ffb83d;'></i>
@@ -26,9 +26,9 @@
           </div>
           <div class='flex ml-2'>
             <% if plan.user.profile_image&.avatar&.attached? %>
-              <%= image_tag(plan.user.profile_image.avatar, class: 'w-7 h-7 rounded-full') %>
+              <%= image_tag(plan.user.profile_image.avatar, class: 'w-7 h-7 rounded-full object-cover') %>
             <% else %>
-              <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full') %>
+              <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full object-cover') %>
             <% end %>
             <span class='pl-1 text-xs leading-7'><%= truncate(plan.user.name, length: 6) %></span>
           </div>
