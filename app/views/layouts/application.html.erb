@@ -3,6 +3,17 @@
   <head>
     <title>旅つなぎ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta property="og:title" content="旅つなぎ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= image_url('tabitsunagiogp.png') %>" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="旅つなぎ" />
+    <meta name="twitter:image" content="<%= image_url('tabitsunagiogp.png') %>" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,6 +27,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= favicon_link_tag('tabitsunagif.svg') %>
+
     <script async
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initialize&libraries=places&v=weekly" defer></script>
     
