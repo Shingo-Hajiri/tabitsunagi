@@ -2,17 +2,19 @@
   <%= render 'shared/search', q: @q, url: plans_path %>
   <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.title') %></h1>
   <% if @plans.present? %>
-  <div class="mb-10 md:grid md:grid-cols-2 md:gap-4">
     <% if @search_plans %>
       <% if @search_plans.present? %>
-        <%= render @search_plans %>
+        <div class="mb-10 md:grid md:grid-cols-2 md:gap-4">
+          <%= render @search_plans %>
+        </div>
       <% else %>
         <p class='pt-4 pb-5 mb-5 mx-auto text-center'>検索に一致するプランがありませんでした。<br>キーワードを変更して再度検索してください。 </p>
       <% end %>
     <% else %>
-      <%= render @plans %>
+      <div class="mb-10 md:grid md:grid-cols-2 md:gap-4">
+        <%= render @plans %>
+      </div>
     <% end %>
-  </div>
   <% else %>
     <p class='pt-4 pb-5 mb-5 mx-auto text-center'><%= t('.no_plans') %></p>
   <% end %>
