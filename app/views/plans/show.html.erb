@@ -32,8 +32,8 @@
         <%= image_tag('sample.jpeg', class: 'w-100 h-50 rounded-lg object-cover') %>
       <% end %>
     </div>
-    <p class='pt-4 pb-5 mb-5 mx-auto'><%= @plan.body %></p>
-    <% @plan.spots.order(:id).each do |spot| %>
+    <p class='pt-4 pb-5 mb-5 mx-auto break-words'><%= auto_link_urls(@plan.body) %></p>
+    <% @plan.spots.each do |spot| %>
       <%= render spot %>
     <% end %>
   </div>

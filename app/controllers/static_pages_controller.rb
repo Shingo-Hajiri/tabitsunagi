@@ -4,4 +4,6 @@ class StaticPagesController < ApplicationController
   def inquiry; end
 
   def privacy; end
+
+  def terms; end
 end

@@ -82,12 +82,22 @@ ja:
       List_of_posts: みんなの投稿を見る
     privacy:
       title: プライバシーポリシー
+    terms:
+      title: 利用規約
   shared:
     before_login_header:
       title: 旅つなぎ
       post_menu: 投稿する
+      make_a_plan: 旅行の計画を立てる
+      attention: (外部サイトに移動します)
     header:
       title: 旅つなぎ
       post_menu: 投稿する
+      make_a_plan: 旅行の計画を立てる
+      attention: (外部サイトに移動します)
     search:
       search_placeholder: おすすめ旅スポットを探す
+    footer:
+      inquiry: お問い合わせ
+      privacy: プライバシーポリシー
+      terms: 利用規約
