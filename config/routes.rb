@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'usage', to: 'static_pages#usage'
   get 'inquiry', to: 'static_pages#inquiry'
   get 'privacy', to: 'static_pages#privacy'
+  get 'terms', to: 'static_pages#terms'
 
   resources :plans, only: %i[index new create edit show update destroy] do
     collection do

@@ -7,7 +7,7 @@
     <%= image_tag('sample.jpeg', class: 'w-100 h-50 rounded-lg object-cover') %>
   <% end %>
 </div>
-<p class='pt-4 pb-5 mb-5 mx-auto'><%= spot.introduction %></p>
+<p class='pt-4 pb-5 mb-5 mx-auto break-words'><%= auto_link_urls(spot.introduction) %></p>
 <div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'></div>
 <p class='pt-4 pb-5 mb-5 mx-auto'>住所:<br>
   <% if spot.address.present? %>
