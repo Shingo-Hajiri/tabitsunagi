@@ -26,6 +26,20 @@
   </label>
 </div>
 
+<div class='pt-10 sm:mx-32' style='display: none;'>
+    <%= f.label :opening_hours %>
+    <label class='input  flex items-center gap-2 bg-white'>
+      <%= f.text_field :opening_hours, id: 'opening' %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32' style='display: none;'>
+    <%= f.label :phone_number %>
+    <label class='input  flex items-center gap-2 bg-white'>
+      <%= f.text_field :phone_number, id: 'phone' %>
+    </label>
+  </div>
+
 <div class='pt-10 mb-5 sm:mx-32'>
   <%= f.label :image %>
   <div class='flex'>

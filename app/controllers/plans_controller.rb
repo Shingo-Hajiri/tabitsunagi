@@ -64,12 +64,14 @@ class PlansController < ApplicationController
     end
   end
 
+  def spots_map; end
+
   private
 
   def plan_params
     params.require(:plan).permit(
       :title, :body, :thumbnail,
-      spots_attributes: [:id, :store_name, :introduction, :address, :site_url, :image]
+      spots_attributes: [:id, :store_name, :introduction, :address, :site_url, :image, :opening_hours, :phone_number]
     )
   end
 end

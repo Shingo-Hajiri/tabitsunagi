@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     collection do
       get :complete
       get :my_recommends
+      get :spots_map
     end
   end
 
