@@ -14,6 +14,8 @@ function initializeAutocomplete() {
     let storeInput = spotField.querySelector('input[id^="store"]');
     let addressInput = spotField.querySelector('input[id^="address"]');
     let inputUrl = spotField.querySelector('input[id^="url"]');
+    let inputOpen = spotField.querySelector('input[id^="opening"]');
+    let inputPhone = spotField.querySelector('input[id^="phone"]');
     
     if (storeInput) {
       let autocomplete = new google.maps.places.Autocomplete(storeInput, { types: ['establishment'] });
@@ -23,6 +25,12 @@ function initializeAutocomplete() {
           storeInput.value = place.name;
           addressInput.value = place.formatted_address;
           inputUrl.value = place.website;
+          inputPhone.value = place.formatted_phone_number || '';
+          if (place.opening_hours && place.opening_hours.weekday_text) {
+            inputOpen.value = place.opening_hours.weekday_text.join(', ');
+          } else {
+            inputOpen.value = '営業時間情報はありません';
+          }
         }
       });
     }

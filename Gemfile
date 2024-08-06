@@ -36,6 +36,7 @@ gem 'rails-i18n', '~> 7.0.0'
 gem "aws-sdk-s3", require: false
 gem 'ransack'
 gem 'dotenv-rails'
+gem 'geocoder'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
