@@ -1,1 +1,13 @@
 <div id='map' style='height: 600px;'></div>
+
+<script>
+  function initMap() {
+    const mapOptions = {
+      center: { lat: 35.6803997, lng: 139.7690174 },
+      zoom: 10
+    };
+    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  }
+</script>
+<script async
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initMap"></script>
