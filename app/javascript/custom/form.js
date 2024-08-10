@@ -13,8 +13,8 @@ function initializeSpotButton() {
 function addSpotButtonClickHandler() {
   const spotFieldsTemplate = document.getElementById("spot-fields-template");
   if (spotFieldsTemplate) {
-    var content = spotFieldsTemplate.innerHTML;
-    var uniqueId = new Date().getTime();
+    let content = spotFieldsTemplate.innerHTML;
+    let uniqueId = new Date().getTime();
     content = content.replace(/new_spot/g, uniqueId);
     document.getElementById("spots").insertAdjacentHTML('beforeend', content);
     addRemoveButtonEventListeners(); // 新しいスポットを追加した後にイベントリスナーを再設定
