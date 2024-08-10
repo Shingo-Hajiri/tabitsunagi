@@ -1,8 +1,13 @@
 <%= search_form_for q, url: url do |f| %>
-  <div class="relative flex items-center mt-6 mb-6 sm:mx-32">
+  <div class="relative flex items-center mt-6 sm:mx-32">
     <%= f.text_field :title_or_body_or_spots_store_name_or_spots_address_cont, class:'input input-bordered w-full pr-10 bg-white', placeholder: t('.search_placeholder') %>
     <button type='submit' class='absolute right-3 bg-transparent border-none cursor-pointer'>
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
 <% end %>
+<div class='mt-3 mb-6 sm:mx-32'>
+  <%= link_to spots_map_plans_path, class:'text-accent-blue text-xs md:text-sm font-bold hover:opacity-75' do %>
+    <p>現在位置からおすすめスポットを探す →</p>
+  <% end %>
+</div>
