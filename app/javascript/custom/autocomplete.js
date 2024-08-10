@@ -40,6 +40,6 @@ function initializeAutocomplete() {
 window.initializeAutocomplete = initializeAutocomplete;
 
 // Initialize autocomplete for existing spots on page load
-document.addEventListener('DOMContentLoaded', initialize);
 document.addEventListener('turbo:load', initialize);
+document.addEventListener('DOMContentLoaded', initialize);
 document.addEventListener('turbo:render', initialize);

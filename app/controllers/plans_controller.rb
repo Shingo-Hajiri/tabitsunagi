@@ -64,7 +64,9 @@ class PlansController < ApplicationController
     end
   end
 
-  def spots_map; end
+  def spots_map
+    @spots = Spot.includes(:plan)
+  end
 
   private
 

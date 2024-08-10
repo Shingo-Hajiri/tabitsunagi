@@ -2,12 +2,25 @@
 
 <script>
   function initMap() {
+    const mapElement = document.getElementById('map');
     const mapOptions = {
       center: { lat: 35.6803997, lng: 139.7690174 },
       zoom: 10
     };
-    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    const map = new google.maps.Map(mapElement, mapOptions);
+
+    <% @spots.each do |spot| %>
+      <% if spot.latitude.present? && spot.longitude.present? %>
+        new google.maps.Marker({
+          position: {lat: <%= spot.latitude %>, lng: <%= spot.longitude %>},
+          map: map,
+          title: '<%= j spot.store_name %>'
+        });
+      <% end %>
+    <% end %>
   }
 </script>
+
 <script async
-      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initMap"></script>
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initMap&libraries=places"></script>
