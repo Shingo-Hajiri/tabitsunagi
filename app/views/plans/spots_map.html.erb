@@ -1,24 +1,75 @@
 <div id='map' style='height: 600px;'></div>
 
+<dialog id='spot_modal' class='modal'>
+  <div class='modal-box'>
+    <form method="dialog">
+      <button class='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
+    </form>
+    <div class='spot_show'></div>
+  </div>
+</dialog>
+
 <script>
   function initMap() {
     const mapElement = document.getElementById('map');
     const mapOptions = {
       center: { lat: 35.6803997, lng: 139.7690174 },
-      zoom: 10
+      zoom: 10,
+      streetViewControl: false,
+      mapTypeControl: false,
+      fullscreenControl: false,
+      keyboardShortcuts: false
     };
 
     const map = new google.maps.Map(mapElement, mapOptions);
 
     <% @spots.each do |spot| %>
-      <% if spot.latitude.present? && spot.longitude.present? %>
-        new google.maps.Marker({
-          position: {lat: <%= spot.latitude %>, lng: <%= spot.longitude %>},
-          map: map,
-          title: '<%= j spot.store_name %>'
-        });
-      <% end %>
+      (() => {
+        <% if spot.latitude.present? && spot.longitude.present? %>
+          let marker = new google.maps.Marker({
+            position: {lat: <%= spot.latitude %>, lng: <%= spot.longitude %>},
+            map: map,
+            title: '<%= j spot.store_name %>'
+          });
+
+          marker.addListener('click', function() {
+            const modalContent = `
+            <div class='sm:mx-10 md:mx-20'>
+              <p class='mb-3'><%= spot.store_name %></p>
+              <% if spot.image.present? %>
+                <%= image_tag spot.image, class: 'w-64 h-32 mb-3 rounded-lg object-cover' %>
+              <% end %>
+              <% if spot.opening_hours.present? %>
+                <p class='mb-3 sm:text-sm md:text-base'>営業時間：<br>
+                  <% spot.opening_hours.split(', ').each do |hour| %>
+                    <%= hour %><br>
+                  <% end %>
+                </p>
+              <% end %>
+              <% if spot.phone_number.present? %>
+                <p class='mb-3 text-sm'>電話番号：<%= spot.phone_number %></p>
+              <% end %>
+              <div class='text-center'>
+              <%= link_to plan_path(spot.plan_id), class: 'btn bg-accent-blue text-white hover:bg-accent-blue hover:opacity-50', target: '_blank' do %>
+                <p>詳細を見る</p>
+              <% end %>
+              </div>
+            </div>
+            `;
+
+            document.querySelector('.spot_show').innerHTML = modalContent;
+            document.getElementById('spot_modal').showModal();
+          });
+        <% end %>
+      })();
     <% end %>
+
+    document.addEventListener('click', function(event) {
+      const modal = document.getElementById('spot_modal');
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
   }
 </script>
 
