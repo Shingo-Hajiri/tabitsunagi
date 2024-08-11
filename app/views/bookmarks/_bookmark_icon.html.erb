@@ -1,0 +1,7 @@
+<div>
+  <% if current_user.bookmark?(plan) %>
+    <%= render 'bookmarks/unbookmark', plan: plan %>
+  <% else %>
+    <%= render 'bookmarks/bookmark', plan: plan %>
+  <% end %>
+</div>

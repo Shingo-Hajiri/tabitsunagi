@@ -22,6 +22,10 @@
             <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
           <% end %>
         </div>
+      <% else %>
+        <% if user_signed_in? %>
+          <%= render 'bookmark_icon', plan: @plan %>
+        <% end %>
       <% end %>
     </div>
     <h1 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= @plan.title %></h1>

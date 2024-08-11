@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "bookmark-icon-for-plan-#{@plan.id}" do %>
+  <%= render 'bookmarks/unbookmark', plan: @plan %>
+<% end %>

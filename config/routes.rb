@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       get :complete
       get :my_recommends
       get :spots_map
+      get :bookmarks
     end
   end
 
@@ -35,6 +36,8 @@ Rails.application.routes.draw do
       get :email_edit
     end
   end
+
+  resources :bookmarks, only: %i[create destroy]
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 

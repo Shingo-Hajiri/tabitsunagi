@@ -59,6 +59,9 @@ ja:
     spot_fields:
       store_name_placeholder: どこかのたこ焼き屋さん
       introduction_placeholder: 大きなタコが入っていて美味しかった♪
+    bookmarks:
+      title: お気に入り
+      no_plans: お気に入り登録がありません。
   profiles:
     show:
       title: プロフィール
@@ -87,17 +90,30 @@ ja:
   shared:
     before_login_header:
       title: 旅つなぎ
-      post_menu: 投稿する
+      plans_index: '| みんなのおすすめ旅'
+      post_menu: '| 投稿する'
+      hm_post_menu: '投稿する'
+      new_account: '| アカウント登録'
+      my_recommends: 私のおすすめ旅
+      sign_in: '| ログイン'
       make_a_plan: 旅行の計画を立てる
       attention: (外部サイトに移動します)
+      usage: '| サイトについて'
     header:
       title: 旅つなぎ
-      post_menu: 投稿する
-      make_a_plan: 旅行の計画を立てる
+      post_menu: '| 投稿する'
+      hm_post_menu: '投稿する'
+      my_recommends: '| 私のおすすめ旅'
+      plans_index: '| みんなのおすすめ旅'
+      my_bookmarks: '| お気に入り'
+      make_a_plan: '| 旅行の計画を立てる'
+      hm_make_a_plan: 旅行の計画を立てる
       attention: (外部サイトに移動します)
+      sign_out: '| ログアウト'
     search:
       search_placeholder: おすすめ旅スポットを探す
     footer:
       inquiry: お問い合わせ
       privacy: プライバシーポリシー
       terms: 利用規約
+      usage: サイトについて
