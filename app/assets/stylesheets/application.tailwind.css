@@ -22,3 +22,7 @@
 .custom-file-input::file-selector-button:hover {
   opacity: 0.5;
 }
+
+.body-no-scroll {
+  @apply overflow-hidden;
+}

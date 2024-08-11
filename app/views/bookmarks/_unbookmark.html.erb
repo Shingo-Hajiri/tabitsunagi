@@ -1,0 +1,3 @@
+<%= link_to bookmark_path(current_user.bookmarks.find_by(plan_id: plan.id)), id: "unbookmark-icon-for-plan-#{plan.id}", data: { turbo_method: :delete } do %>
+  <i class="fa-solid fa-heart fa-lg" style="color: #ed7b7b;"></i>
+<% end %>

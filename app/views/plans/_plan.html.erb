@@ -45,6 +45,10 @@
               <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
             <% end %>
           </div>
+        <% else %>
+          <% if user_signed_in? %>
+            <%= render 'bookmarks/bookmark_icon', plan: plan %>
+          <% end %>
         <% end %>
       </div>
     </div>

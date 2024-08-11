@@ -68,6 +68,10 @@ class PlansController < ApplicationController
     @spots = Spot.includes(:plan)
   end
 
+  def bookmarks
+    @bookmark_plans = current_user.bookmark_plans.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def plan_params

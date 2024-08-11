@@ -2,6 +2,7 @@ function initializeHamburgerMenu() {
   const open = document.getElementById('open');
   const close = document.getElementById('close');
   const menu = document.getElementById('menu');
+  const body = document.body;
 
   if (open && close && menu) {
     open.classList.remove('hidden');
@@ -9,16 +10,17 @@ function initializeHamburgerMenu() {
     menu.classList.add('hidden');
     
     open.addEventListener('click', () => {
-      console.log('Open clicked'); 
       open.classList.add('hidden');
       close.classList.remove('hidden');
       menu.classList.remove('hidden');
+      body.classList.add('body-no-scroll');
     });
   
     close.addEventListener('click', () => {
       close.classList.add('hidden');
       open.classList.remove('hidden');
       menu.classList.add('hidden');
+      body.classList.remove('body-no-scroll');
     });
   }
 }
