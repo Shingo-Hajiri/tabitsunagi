@@ -39,8 +39,8 @@
           loadingModal.style.display = 'none';
         },
         () => {
-          handleLocationError(true, map.Center());
           loadingModal.style.display = 'none';
+          handleLocationError(true, map.Center());
         }
       );
     } else {
@@ -72,7 +72,7 @@
           marker.addListener('click', function() {
             const modalContent = `
             <div class='sm:mx-10 md:mx-20'>
-              <p class='mb-3 font-bold text-lg'><%= spot.store_name %></p>
+              <p class='mt-3 mb-3 font-bold text-lg'><%= spot.store_name %></p>
               <% if spot.image.present? %>
                 <%= image_tag spot.image, class: 'w-64 h-32 mb-3 rounded-lg object-cover' %>
               <% end %>
