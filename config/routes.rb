@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
-    passwords: 'users/passwords'
+    passwords: 'users/passwords',
+    omniauth_callbacks: "omniauth_callbacks"
   }, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',

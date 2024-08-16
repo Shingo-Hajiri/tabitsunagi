@@ -1,5 +1,18 @@
+<%= content_for(:title, t('.title')) %>
 <div class="py-0 px-5 my-0 mx-auto max-w-screen-xl">
   <h1 class="text-accent-blue font-bold pt-3 mb-0 mx-auto text-center text-xl"><%= t('.title') %></h1>
+
+  <%- if devise_mapping.omniauthable? %>
+  <div class="text-center my-10">
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= button_to omniauth_authorize_path(resource_name, provider), class: 'w-32 hover:brightness-75', data: { turbo: false } do %>
+        <%= image_tag 'btn_login_base' %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<p class='text-center text-sm'>-----  または  -----</p>
 
   <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>

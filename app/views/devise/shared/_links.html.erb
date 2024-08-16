@@ -28,11 +28,3 @@
     <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name), class: "text-accent-blue font-bold hover:opacity-75" %><br />
   </div>
 <% end %>
-
-<%- if devise_mapping.omniauthable? %>
-  <div class="text-center mb-10">
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
-    <% end %>
-  </div>
-<% end %>
