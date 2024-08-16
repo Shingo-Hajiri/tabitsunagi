@@ -6,7 +6,7 @@
   <div class="text-center my-10">
     <%- resource_class.omniauth_providers.each do |provider| %>
       <%= button_to omniauth_authorize_path(resource_name, provider), class: 'w-32 hover:brightness-75', data: { turbo: false } do %>
-        <%= image_tag 'btn_login_base' %>
+        <%= image_tag 'btn_login_base.png' %>
       <% end %>
     <% end %>
   </div>
