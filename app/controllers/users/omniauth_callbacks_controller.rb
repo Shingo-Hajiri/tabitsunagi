@@ -27,7 +27,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
-  def line; basic_action end
+  def line
+    basic_action
+  end
 
   private
   def basic_action
