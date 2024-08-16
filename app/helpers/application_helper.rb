@@ -8,6 +8,11 @@ module ApplicationHelper
     end
   end
 
+  def page_title(title= '')
+    base_title = '旅つなぎ'
+    title.present? ? "#{title} | #{base_title}" : base_title
+  end
+
   def address_processing(address)
     address = address
     address.gsub(/日本、/, '')
