@@ -40,7 +40,7 @@ gem 'geocoder'
 
 gem 'omniauth-line'
 gem 'omniauth'
-gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
