@@ -10,12 +10,16 @@
       <% end %>
       <span class='pl-1'><%= current_user.name %></span>
     </div>
-    <p class='pt-10 mb-10'><%= current_user.email %></p>
+    <% if current_user.provider != 'line' %>
+      <p class='pt-10 mb-10'><%= current_user.email %></p>
+    <% end %>
     <div class='pt-10 mb-10'>
       <%= link_to t('.edit_button'), edit_profile_path, class: 'btn bg-accent-blue text-white px-20 hover:bg-accent-blue hover:opacity-50' %>
     </div>
-    <%= link_to email_edit_profile_path, class:'text-accent-blue font-bold hover:opacity-75' do %>
-      <p class='pt-10 mb-10'>メールアドレスの変更はこちら →</p>
+    <% if current_user.provider != 'line' %>
+      <%= link_to email_edit_profile_path, class:'text-accent-blue font-bold hover:opacity-75' do %>
+        <p class='pt-10 mb-10'>メールアドレスの変更はこちら →</p>
+      <% end %>
     <% end %>
     <div class='pt-10 mb-20'>
       <%= link_to t('.unsubscribe_button'), user_registration_path(@user), data: { turbo_method: :delete, turbo_confirm: t('.deleting_confirmation') }, class: 'btn bg-custom-red text-white px-20 hover:bg-custom-red hover:opacity-50' %>
