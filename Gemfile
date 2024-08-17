@@ -42,6 +42,9 @@ gem 'omniauth-line'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 
+gem 'sitemap_generator'
+gem 'whenever', require: false
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
