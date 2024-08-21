@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_search
   def not_authenticated
-    redirect_to login_path
+    redirect_to new_user_session_path
   end
 
   def set_search
