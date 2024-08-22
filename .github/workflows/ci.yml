@@ -10,8 +10,9 @@ jobs:
     defaults:
       run:
         working-directory: .
+
     services:
-      postgres:
+      db:
         image: postgres:latest
         ports:
           - 5432:5432
