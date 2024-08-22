@@ -44,6 +44,9 @@ jobs:
           gem install bundler
           bundle install
 
+      - name: Precompile assets
+        run: bundle exec rails assets:precompile
+
       - name: Database create and migrate
         run: |
           cp config/database.yml.ci config/database.yml
