@@ -59,6 +59,13 @@ jobs:
         env:
           GOOGLEMAPS_API_KEY: ${{ secrets.GOOGLEMAPS_API_KEY }}
 
+      - name: Archive rspec result screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rspec result screenshots
+          path: tmp/capybara/
+
   rubocop:
     runs-on: ubuntu-latest
     defaults:
