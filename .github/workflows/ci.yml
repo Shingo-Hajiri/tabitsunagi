@@ -18,11 +18,11 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
-          POSTGRES_DB: test
+          POSTGRES_DB: myapp_test
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -31,7 +31,7 @@ jobs:
           bundler-cache: true
 
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
@@ -46,11 +46,14 @@ jobs:
       - name: Database create and migrate
         run: |
           cp config/database.yml.ci config/database.yml
+          bundle exec rails db:drop RAILS_ENV=test
           bundle exec rails db:create RAILS_ENV=test
           bundle exec rails db:migrate RAILS_ENV=test
 
       - name: Run rspec
         run: bundle exec rspec
+        env:
+          GOOGLEMAPS_API_KEY: ${{ secrets.GOOGLEMAPS_API_KEY }}
 
   rubocop:
     runs-on: ubuntu-latest
