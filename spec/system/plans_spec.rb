@@ -96,9 +96,9 @@ RSpec.describe "Plans", type: :system do
           fill_in '内容', with: 'テストおすすめ旅'
           find("input[name='plan[spots_attributes][0][store_name]']").set('テスト施設名1')
           find("textarea[name='plan[spots_attributes][0][introduction]']").set('テストおすすめポイント1')
-          expect(page).to have_selector('.spot-fields', count: 2)
+          expect(page).to have_selector('.spot-fields', count: 1)
           find('.svg-inline--fa.fa-circle-plus.fa-4x.cursor-pointer').click
-          expect(page).to have_selector('.spot-fields', count: 3)
+          expect(page).to have_selector('.spot-fields', count: 2)
 
           within("#spots") do
             find("#store").set('')
