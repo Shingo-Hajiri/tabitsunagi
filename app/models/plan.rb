@@ -10,11 +10,11 @@ class Plan < ApplicationRecord
 
   def self.ransackable_attributes(auth_object = nil)
     # 検索対象としたい属性を列挙します
-    ["title", "body", "created_at", "updated_at", "user_id"]
+    %w[title body created_at updated_at user_id]
   end
 
   def self.ransackable_associations(auth_object = nil)
-    ["spots", "thumbnail_attachment", "thumbnail_blob", "user"]
+    %w[spots thumbnail_attachment thumbnail_blob user]
   end
 
   def first_spot_address

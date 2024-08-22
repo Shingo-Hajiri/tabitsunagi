@@ -21,11 +21,7 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to complete_plans_path, notice: t('.success')
     else
-      if @plan.spots.empty?
-        @plan.spots.build
-      end
-      flash.now[:alert] = t('.failure')
-      render :new, status: :unprocessable_entity
+      create_failed_save
     end
   end
 
@@ -77,7 +73,13 @@ class PlansController < ApplicationController
   def plan_params
     params.require(:plan).permit(
       :title, :body, :thumbnail,
-      spots_attributes: [:id, :store_name, :introduction, :address, :site_url, :image, :opening_hours, :phone_number]
+      spots_attributes: %i[id store_name introduction address site_url image opening_hours phone_number]
     )
+  end
+
+  def create_failed_save
+    @plan.spots.build if @plan.spots.empty?
+    flash.now[:alert] = t('.failure')
+    render :new, status: :unprocessable_entity
   end
 end

@@ -28,7 +28,7 @@ RSpec.describe Plan, type: :model do
     end
 
     it 'bodyの値が65,536文字以上の場合にバリデーションエラーが機能しているか' do
-      plan_length_over_body = build(:plan, body: "あ" * 65536)
+      plan_length_over_body = build(:plan, body: "あ" * 65_536)
       expect(plan_length_over_body).to be_invalid
     end
   end

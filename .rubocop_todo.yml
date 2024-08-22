@@ -28,6 +28,7 @@ Layout/ArgumentAlignment:
 Layout/CommentIndentation:
   Exclude:
     - 'config/sitemap.rb'
+    - 'spec/spec_helper.rb'
 
 # Offense count: 9
 # This cop supports safe autocorrection (--autocorrect).
@@ -51,6 +52,11 @@ Layout/EmptyLinesAroundAccessModifier:
   Exclude:
     - 'db/migrate/20240713130933_create_active_storage_tables.active_storage.rb'
 
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'spec/system/users_spec.rb'
+    - 'spec/system/user_sessions_spec.rb'
+    - 'spec/system/plans_spec.rb'
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
@@ -68,6 +74,10 @@ Layout/HashAlignment:
   Exclude:
     - 'db/seeds.rb'
 
+Style/HashSyntax:
+  Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EnforcedStyle.
@@ -83,6 +93,15 @@ Layout/IndentationWidth:
   Exclude:
     - 'config/sitemap.rb'
     - 'db/migrate/20240713130933_create_active_storage_tables.active_storage.rb'
+
+Layout/LineLength:
+  Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+    - 'bin/bundle'
+    - 'config/initializers/devise.rb'
+    - 'db/schema.rb'
+    - 'db/migrate/20240713130933_create_active_storage_tables.active_storage.rb'
+    - 'db/migrate/20240719171740_add_record_id_to_active_storage_attachments.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -202,28 +221,79 @@ Lint/UselessAssignment:
     - 'app/models/plan.rb'
     - 'app/models/user.rb'
 
+Metrics/AbcSize:
+  Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+    - 'app/controllers/users/registrations_controller.rb'
+    - 'db/migrate/20240713130933_create_active_storage_tables.active_storage.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'config/environments/production.rb'
+    - 'config/routes.rb'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'spec/models/plan_spec.rb'
+    - 'spec/models/spot_spec.rb'
+    - 'spec/models/user_spec.rb'
+    - 'spec/system/users_spec.rb'
+    - 'spec/system/user_sessions_spec.rb'
+    - 'spec/system/plans_spec.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'bin/bundle'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+    - 'app/controllers/users/registrations_controller.rb'
+    - 'bin/bundle'
+    - 'db/migrate/20240710070914_devise_create_users.rb'
+    - 'db/migrate/20240713130933_create_active_storage_tables.active_storage.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'bin/bundle'
 # Offense count: 2
-# Naming/AccessorMethodName:
-#   Exclude:
-#     - 'app/models/user.rb'
+Naming/AccessorMethodName:
+  Exclude:
+    - 'app/models/user.rb'
 
 # Offense count: 6
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: nested, compact
-# Style/ClassAndModuleChildren:
-#   Exclude:
-#     - 'app/controllers/users/confirmations_controller.rb'
-#     - 'app/controllers/users/omniauth_callbacks_controller.rb'
-#     - 'app/controllers/users/passwords_controller.rb'
-#     - 'app/controllers/users/registrations_controller.rb'
-#     - 'app/controllers/users/sessions_controller.rb'
-#     - 'app/controllers/users/unlocks_controller.rb'
+
+Style/ArgumentsForwarding:
+  Exclude:
+    - 'bin/setup'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/users/confirmations_controller.rb'
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+    - 'app/controllers/users/passwords_controller.rb'
+    - 'app/controllers/users/registrations_controller.rb'
+    - 'app/controllers/users/sessions_controller.rb'
+    - 'app/controllers/users/unlocks_controller.rb'
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
 
 # Offense count: 27
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
   Enabled: false
+
+Style/FetchEnvVar:
+  Exclude:
+    - 'bin/bundle'
+    - 'config/environments/production.rb'
+    - 'config/initializers/devise.rb'
+    - 'config/initializers/geocoder.rb'
 
 # Offense count: 53
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -252,6 +322,7 @@ Style/GlobalStdStream:
 # SupportedShorthandSyntax: always, never, either, consistent, either_consistent
 Style/HashSyntax:
   Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
     - 'config/environments/development.rb'
     - 'config/environments/production.rb'
     - 'config/sitemap.rb'
@@ -263,6 +334,7 @@ Style/IfUnlessModifier:
   Exclude:
     - 'app/controllers/plans_controller.rb'
     - 'bin/bundle'
+    - 'db/migrate/20240719171740_add_record_id_to_active_storage_attachments.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
@@ -284,11 +356,17 @@ Style/PerlBackrefs:
   Exclude:
     - 'bin/bundle'
 
+Style/RedundantConstantBase:
+  Exclude:
+    - 'config/environments/production.rb'
+
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
-# Style/RedundantCondition:
-#   Exclude:
-#     - 'app/controllers/users/omniauth_callbacks_controller.rb'
+Style/RedundantCondition:
+  Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+    - 'config/environments/production.rb'
+
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -344,9 +422,9 @@ Style/SymbolArray:
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EnforcedStyleForMultiline.
 # SupportedStylesForMultiline: comma, consistent_comma, no_comma
-# Style/TrailingCommaInArguments:
-#   Exclude:
-#     - 'config/initializers/geocoder.rb'
+Style/TrailingCommaInArguments:
+  Exclude:
+    - 'config/initializers/geocoder.rb'
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
