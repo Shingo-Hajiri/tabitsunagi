@@ -21,11 +21,6 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: myapp_test
 
-      chrome:
-        image: seleniarm/standalone-chromium:latest
-        ports:
-          - 4444:4444
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
