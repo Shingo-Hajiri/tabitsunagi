@@ -25,7 +25,6 @@ jobs:
         image: seleniarm/standalone-chromium:latest
         ports:
           - 4444:4444
-        shm_size: 2gb
 
     steps:
       - name: Checkout code
