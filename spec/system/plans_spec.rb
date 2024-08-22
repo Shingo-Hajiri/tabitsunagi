@@ -110,5 +110,19 @@ RSpec.describe "Plans", type: :system do
         end
       end
     end
+
+    describe 'おすすめ旅投稿(オートコンプリート機能)' do
+      context '施設名に値を入力する' do
+        it '予測リスト内の値が反映される' do
+          visit new_plan_path
+          fill_in 'タイトル', with: 'テスト'
+          fill_in '内容', with: 'テストおすすめ旅'
+          find("input[name='plan[spots_attributes][0][store_name]']").set('東京')
+          expect(page).to have_selector('.pac-item', visible: true)
+          first('.pac-item').click
+          expect(find("input[name='plan[spots_attributes][0][store_name]']").value).to_not eq '東京'
+        end
+      end
+    end
   end
 end
