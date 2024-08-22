@@ -4,5 +4,5 @@ test:
   database: test
   username: postgres
   password: postgres
-  host: localhost
+  host: db
   port: 5432
