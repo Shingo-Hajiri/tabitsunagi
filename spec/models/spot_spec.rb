@@ -28,7 +28,7 @@ RSpec.describe Spot, type: :model do
     end
 
     it 'introductionの値が65,536文字以上の場合にバリデーションエラーが機能しているか' do
-      spot_length_over_introduction = build(:spot, introduction: "あ" * 65536)
+      spot_length_over_introduction = build(:spot, introduction: "あ" * 65_536)
       expect(spot_length_over_introduction).to be_invalid
     end
   end

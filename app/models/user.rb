@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   validates :name, presence: true, length: { maximum: 255 }
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: %i[line]
@@ -15,7 +15,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile_image
 
   def own?(object)
-    object&. user_id == id
+    object&.user_id == id
   end
 
   # ブックマークを作る
@@ -32,7 +32,7 @@ class User < ApplicationRecord
   end
 
   def social_profile(provider)
-    social_profiles.select{ |sp| sp.provider == provider.to_s }.first
+    social_profiles.select { |sp| sp.provider == provider.to_s }.first
   end
 
   def set_values(omniauth)
@@ -45,9 +45,8 @@ class User < ApplicationRecord
     credentials = credentials.to_json
     name = info['name']
   end
-
-  def set_values_by_raw_info(raw_info)
-    self.raw_info = raw_info.to_json
-    self.save!
-  end
+  # def set_values_by_raw_info(raw_info)
+  #   self.raw_info = raw_info.to_json
+  #   self.save!
+  # end
 end
