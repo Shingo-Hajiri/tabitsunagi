@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :spots, only: [:destroy]
+
   resource :profile, only: %i[edit show update destroy] do
     member do
       get :email_edit

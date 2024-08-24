@@ -1,57 +1,64 @@
-<div class='pt-10 sm:mx-32'>
-  <%= f.label :store_name %>
-  <label class='input flex items-center gap-2 bg-white'>
-    <%= f.text_field :store_name, id: 'store', class:'w-full', placeholder: t('.store_name_placeholder') %>
-  </label>
-</div>
-
-<div class='pt-10 sm:mx-32'>
-  <%= f.label :introduction %>
-  <label class='flex'>
-  <%= f.text_area :introduction, class:'textarea h-24 w-full resize-none text-base bg-white', placeholder: t('.introduction_placeholder') %>
-  </label>
-</div>
-
-<div class='pt-10 sm:mx-32' style='display: none;'>
-  <%= f.label :address %>
-  <label class='input flex items-center gap-2 bg-white'>
-    <%= f.text_field :address, id: 'address' %>
-  </label>
-</div>
-
-<div class='pt-10 sm:mx-32' style='display: none;'>
-  <%= f.label :site_url %>
-  <label class='input  flex items-center gap-2 bg-white'>
-    <%= f.text_field :site_url, id: 'url' %>
-  </label>
-</div>
-
-<div class='pt-10 sm:mx-32' style='display: none;'>
-  <%= f.label :opening_hours %>
-  <label class='input  flex items-center gap-2 bg-white'>
-    <%= f.text_field :opening_hours, id: 'opening' %>
-  </label>
-</div>
-
-<div class='pt-10 sm:mx-32' style='display: none;'>
-  <%= f.label :phone_number %>
-  <label class='input  flex items-center gap-2 bg-white'>
-    <%= f.text_field :phone_number, id: 'phone' %>
-  </label>
-</div>
-
-<div class='pt-10 mb-5 sm:mx-32'>
-  <%= f.label :image %>
-  <div class='flex'>
-    <%= f.file_field :image, class: 'w-full, file-input border-none custom-file-input bg-white' %>
+<div id="delete-spot-<%= "#{f.object.id}" %>">
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :store_name %>
+    <label class='input flex items-center gap-2 bg-white'>
+      <%= f.text_field :store_name, id: 'store', class:'w-full', placeholder: t('.store_name_placeholder') %>
+    </label>
   </div>
-  <div class='sm:mx-32'>
-    <% if f.object.image&.attached? %>
-      <p><%= t('.current_image') %></p>
-      <div>
-        <%= image_tag f.object.image, class: 'w-32 h-32 rounded-lg object-cover' %>
-      </div>
-    <% end %>
+
+  <div class='pt-10 sm:mx-32'>
+    <%= f.label :introduction %>
+    <label class='flex'>
+    <%= f.text_area :introduction, class:'textarea h-24 w-full resize-none text-base bg-white', placeholder: t('.introduction_placeholder') %>
+    </label>
   </div>
+
+  <div class='pt-10 sm:mx-32' style='display: none;'>
+    <%= f.label :address %>
+    <label class='input flex items-center gap-2 bg-white'>
+      <%= f.text_field :address, id: 'address' %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32' style='display: none;'>
+    <%= f.label :site_url %>
+    <label class='input  flex items-center gap-2 bg-white'>
+      <%= f.text_field :site_url, id: 'url' %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32' style='display: none;'>
+    <%= f.label :opening_hours %>
+    <label class='input  flex items-center gap-2 bg-white'>
+      <%= f.text_field :opening_hours, id: 'opening' %>
+    </label>
+  </div>
+
+  <div class='pt-10 sm:mx-32' style='display: none;'>
+    <%= f.label :phone_number %>
+    <label class='input  flex items-center gap-2 bg-white'>
+      <%= f.text_field :phone_number, id: 'phone' %>
+    </label>
+  </div>
+
+  <div class='pt-10 mb-5 sm:mx-32'>
+    <%= f.label :image %>
+    <div class='flex'>
+      <%= f.file_field :image, class: 'w-full, file-input border-none custom-file-input bg-white' %>
+    </div>
+    <div class='sm:mx-32'>
+      <% if f.object.image&.attached? %>
+        <p><%= t('.current_image') %></p>
+        <div>
+          <%= image_tag f.object.image, class: 'w-32 h-32 rounded-lg object-cover' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to spot_path(f.object.id), data: { turbo_method: :delete, turbo_confirm: "#{ f.object.store_name }の情報を削除しますか？" } do %>
+    <div class='cursor-pointer pt-5 mb-5 sm:mx-32 text-right'>
+      <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
+    </div>
+  <% end %>
+  <div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'></div>
 </div>
-<div class='border-t border-gray-600 sm:mx-32 opacity-25 border-dotted'></div>
