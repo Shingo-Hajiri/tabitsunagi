@@ -2,7 +2,7 @@
 <main class='py-0 px-5 my-0 mx-auto max-w-screen-xl h-full z-10'>
   <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.title') %></h1>
   <div class="mb-10">
-    <%= image_tag('tabitsunagi.png', class: 'w-96 h-48 mx-auto rounded-lg object-cover') %>
+    <%= image_tag('tabitsunagi.png', class: 'w-96 h-56 mx-auto rounded-lg object-cover') %>
     <p class='md:text-center'>"旅つなぎ"は自分のおすすめ旅行スポットを簡単に共有し合えるサービスです。</p>
     <div class='pt-10 mb-10 text-center'>
       <% if user_signed_in? %>
@@ -16,7 +16,7 @@
       <ul class='list-inside list-disc'>
         <li class='mt-5 mb-1'>おすすめ旅スポットを投稿する</li>
         <p class='pl-5 mb-3'>おすすめの旅スポットを投稿することができます。一つの投稿で複数の旅スポットを投稿することもできます。<br><span class='text-custom-red'>※投稿はログインユーザー限定のサービスです。</span></p>
-        <%= image_tag('post.png', class: 'w-96 h-48 mx-auto rounded-lg object-cover') %>
+        <%= image_tag('post.png', class: 'w-96 h-56 mx-auto rounded-lg object-cover') %>
         <div class='pt-10 mb-10 text-center'>
           <% if user_signed_in? %>
             <%= link_to t('.post'), new_plan_path, class: 'btn bg-accent-blue text-white px-5 w-64 hover:bg-accent-blue hover:opacity-50' %>
@@ -31,9 +31,9 @@
       <ul class='list-inside list-disc'>
         <li class='mt-5 mb-1'>みんなの投稿を見る</li>
         <p class='pl-5 mb-3'>みんなの投稿した旅スポットを見ることができます。<br>おすすめポイントや施設のホームページにもアクセスできます！</p>
-        <%= image_tag('spot.png', class: 'w-96 h-48 mx-auto rounded-lg object-cover mb-3') %>
+        <%= image_tag('spot.png', class: 'w-96 h-56 mx-auto rounded-lg object-cover mb-3') %>
         <p class='pl-5 mb-3'>現在地周辺のおすすめスポットを地図上で探すことができます！<br><span class='text-custom-red'>※ログインユーザー限定のサービスです。</span></p>
-        <%= image_tag('map.png', class: 'w-96 h-48 mx-auto rounded-lg object-cover') %>
+        <%= image_tag('map.png', class: 'w-96 h-56 mx-auto rounded-lg object-cover') %>
         <div class='pt-10 mb-10 text-center'>
           <%= link_to t('.List_of_posts'), plans_path, class: 'btn bg-main-orange text-white px-5 w-64 hover:bg-main-orange hover:opacity-50' %>
         </div>
