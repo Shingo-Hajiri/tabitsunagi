@@ -28,7 +28,6 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= favicon_link_tag('tabitsunagif.svg') %>
-    <%= image_tag('tabitsunagif.svg', rel: 'icon') %>
 
     <script async
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initialize&libraries=places&v=weekly" defer></script>
