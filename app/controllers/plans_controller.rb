@@ -27,6 +27,7 @@ class PlansController < ApplicationController
 
   def edit
     @plan = current_user.plans.find(params[:id])
+    @spots = @plan.spots.order(:id)
   end
 
   def update
