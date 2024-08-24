@@ -33,14 +33,7 @@ class PlansController < ApplicationController
   def update
     @plan = current_user.plans.find(params[:id])
 
-    spots_attributes = params[:plan][:spots_attributes]
-
-    spots_attributes.each do |key, spot_params|
-      if spot_params[:id].present?
-        spot = @plan.spots.find_by(id: spot_params[:id])
-        delete_spot_if_nil(spots_attributes, key) if spot.nil?
-      end
-    end
+    clean_up_spots
 
     if @plan.update(plan_params)
       redirect_to plan_path(@plan), notice: t('.success')
@@ -92,6 +85,17 @@ class PlansController < ApplicationController
     @plan.spots.build if @plan.spots.empty?
     flash.now[:alert] = t('.failure')
     render :new, status: :unprocessable_entity
+  end
+
+  def clean_up_spots
+    spots_attributes = params[:plan][:spots_attributes]
+
+    spots_attributes.each do |key, spot_params|
+      if spot_params[:id].present?
+        spot = @plan.spots.find_by(id: spot_params[:id])
+        delete_spot_if_nil(spots_attributes, key) if spot.nil?
+      end
+    end
   end
 
   def delete_spot_if_nil(spots_attributes, key)
