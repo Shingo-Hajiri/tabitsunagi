@@ -1,6 +1,6 @@
 ## チケットへのリンク
 
-* https://example.com
+* http://localhost:3000/
 
 ## やったこと(issue番号も記述する)
 

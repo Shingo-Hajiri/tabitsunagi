@@ -37,7 +37,7 @@
       <%= render 'add_edit_spot_fields', f: spot_fields %>
     <% end %>
   </div>
-    <%= f.fields_for :spots do |spot_fields| %>
+    <%= f.fields_for :spots, @spots do |spot_fields| %>
       <%= render 'edit_spot_fields', f: spot_fields %>
     <% end %>
   <div id='spots'></div>
