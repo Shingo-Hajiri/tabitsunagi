@@ -34,7 +34,7 @@
   <h2 class='text-main-orange font-bold pt-3 mt-5 mb-0 mx-auto text-xl sm:text-center'><%= t('.title') %></h2>
   <div id='spot-fields-template' style='display: none'>
     <%= f.fields_for :spots, Spot.new, child_index: 'new_spot' do |spot_fields| %>
-      <%= render 'spot_fields', f: spot_fields %>
+      <%= render 'add_edit_spot_fields', f: spot_fields %>
     <% end %>
   </div>
     <%= f.fields_for :spots do |spot_fields| %>

@@ -48,6 +48,9 @@ ja:
       store_name_placeholder: どこかのたこ焼き屋さん
       introduction_placeholder: 大きなタコが入っていて美味しかった♪
       current_image: 現在の画像
+    add_edit_spot_fields:
+      store_name_placeholder: どこかのたこ焼き屋さん
+      introduction_placeholder: 大きなタコが入っていて美味しかった♪
     form:
       title: おすすめスポット
       title_placeholder: 日帰り！大阪ひとり旅
