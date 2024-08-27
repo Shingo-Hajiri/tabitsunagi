@@ -146,7 +146,7 @@ SNSを活用して宣伝をメインで考えています。
 Figma:
 https://www.figma.com/design/Vtm89NgvqgBJLijVTh6udW/Portfolio?node-id=0-1&t=HfWlX2syXyVPXko1-1
 
-- デザインについて
+#### ・ デザインについて
 Tailwindを使用しています。
 1つのクラスに1つのCSSプロパティが紐づいているため、UIを組み立てた時のトラブルシューティングがしやすいと思い、Bootstrapではなくこちらを採用しました。UIコンポーネントとしてDaisyUIを使用しています。
 メニュー部分の開閉はJavaScriptを使い独自実装をしています。
