@@ -24,9 +24,8 @@ module ApplicationHelper
       "<a href='#{url}' class='text-accent-blue hover:opacity-50' target='_blank' rel='noopener noreferrer'>#{url}</a>"
     end.html_safe
   end
-
-  def change_url(url)
-    sanitized_url = sanitize(url)
-    sanitized_url.gsub('http://', 'https://')
-  end
+  # def change_url(url)
+  #   sanitized_url = sanitize(url)
+  #   sanitized_url.gsub('http://', 'https://')
+  # end
 end
