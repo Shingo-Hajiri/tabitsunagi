@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def address_processing(address)
-    address = address
+    address = sanitize(address)
     address.gsub(/日本、/, '')
   end
 

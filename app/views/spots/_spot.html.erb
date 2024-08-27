@@ -1,5 +1,5 @@
 <div class='border-t border-gray-600 sm:mx-28 opacity-25 border-solid'></div>
-<h2 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-left text-xl'><%= spot.store_name %></h2>
+<h2 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-left text-xl'><%= sanitize(spot.store_name) %></h2>
 <div>
   <% if spot.image.present? %>
     <%= image_tag spot.image, class: 'w-100 h-50 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover' %>
@@ -18,6 +18,6 @@
   <% if spot.site_url == 'undefined' %>
     <%= 'URLがありません。' %>
   <% else %>
-    <%= link_to spot.site_url, spot.site_url, class: 'text-accent-blue hover:opacity-50', target: '_blank' %>
+    <%= link_to sanitize(spot.site_url), sanitize(spot.site_url), class: 'text-accent-blue hover:opacity-50', target: '_blank' %>
   <% end %>
 </p>
