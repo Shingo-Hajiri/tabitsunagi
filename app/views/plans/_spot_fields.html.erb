@@ -14,33 +14,41 @@
     </label>
   </div>
 
-  <div class='pt-10 sm:mx-32' style='display: none;'>
-    <%= f.label :address %>
-    <label class='input flex items-center gap-2 bg-white'>
-      <%= f.text_field :address, id: 'address' %>
-    </label>
+  <div class='pt-10 sm:mx-32'>
+    <details class="collapse bg-base-200">
+      <summary class="collapse-title font-medium">その他の情報を見る</summary>
+      <div class="collapse-content">
+        <div class='pt-10'>
+          <%= f.label :address %>
+          <label class='input flex items-center gap-2 bg-white'>
+            <%= f.text_field :address, id: 'address', class:'w-full' %>
+          </label>
+        </div>
+
+        <div class='pt-10'>
+          <%= f.label :site_url %>
+          <label class='input flex items-center gap-2 bg-white'>
+            <%= f.text_field :site_url, id: 'url', class:'w-full' %>
+          </label>
+        </div>
+
+        <div class='pt-10'>
+          <%= f.label :opening_hours %>
+          <label class='input flex items-center gap-2 bg-white'>
+            <%= f.text_field :opening_hours, id: 'opening', class:'w-full' %>
+          </label>
+        </div>
+
+        <div class='pt-10'>
+          <%= f.label :phone_number %>
+          <label class='input flex items-center gap-2 bg-white'>
+            <%= f.text_field :phone_number, id: 'phone', class:'w-full' %>
+          </label>
+        </div>
+      </div>
+    </details>
   </div>
 
-  <div class='pt-10 sm:mx-32' style='display: none;'>
-    <%= f.label :site_url %>
-    <label class='input  flex items-center gap-2 bg-white'>
-      <%= f.text_field :site_url, id: 'url' %>
-    </label>
-  </div>
-
-  <div class='pt-10 sm:mx-32' style='display: none;'>
-    <%= f.label :opening_hours %>
-    <label class='input  flex items-center gap-2 bg-white'>
-      <%= f.text_field :opening_hours, id: 'opening' %>
-    </label>
-  </div>
-
-  <div class='pt-10 sm:mx-32' style='display: none;'>
-    <%= f.label :phone_number %>
-    <label class='input  flex items-center gap-2 bg-white'>
-      <%= f.text_field :phone_number, id: 'phone' %>
-    </label>
-  </div>
   <div class='cursor-pointer remove-spot pt-5 sm:mx-32 text-right'>
     <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
   </div>
