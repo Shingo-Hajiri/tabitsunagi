@@ -13,5 +13,7 @@ ja:
         address: 住所(任意)
         site_url: サイトURL(任意)
         image: 画像(任意)
+        opening_hours: 営業時間(任意)
+        phone_number: 電話番号(任意)
       profile_image:
         avatar: プロフィール画像
