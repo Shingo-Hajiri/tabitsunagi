@@ -40,13 +40,6 @@
         </div>
 
         <div class='pt-10'>
-          <%= f.label :site_url %>
-          <label class='input flex items-center gap-2 bg-white'>
-            <%= f.text_field :site_url, id: 'url', class:'w-full', readonly: true %>
-          </label>
-        </div>
-
-        <div class='pt-10'>
           <%= f.label :opening_hours %>
           <label class='input flex items-center gap-2 bg-white'>
             <%= f.text_field :opening_hours, id: 'opening', class:'w-full' %>
@@ -57,6 +50,13 @@
           <%= f.label :phone_number %>
           <label class='input flex items-center gap-2 bg-white'>
             <%= f.text_field :phone_number, id: 'phone', class:'w-full' %>
+          </label>
+        </div>
+
+        <div class='pt-10'>
+          <%= f.label :site_url %>
+          <label class='input flex items-center gap-2 bg-base-200'>
+            <%= f.text_field :site_url, id: 'url', class:'w-full', readonly: true %>
           </label>
         </div>
       </div>
