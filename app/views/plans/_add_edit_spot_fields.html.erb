@@ -19,7 +19,7 @@
     <%= f.file_field :image, class: 'w-full, file-input border-none custom-file-input bg-white' %>
   </div>
 
-  <div class='pt-10 mb-5 sm:mx-32' style='display: none;'>
+  <div class='pt-10 mb-5 sm:mx-32'>
     <details class="collapse collapse-arrow">
       <summary class="collapse-title font-bold font-medium">その他の入力情報を見る</summary>
       <div class="collapse-content">
@@ -34,7 +34,7 @@
         <div class='pt-10'>
           <%= f.label :site_url %>
           <label class='input flex items-center gap-2 bg-white'>
-            <%= f.text_field :site_url, id: 'url', class:'w-full' %>
+            <%= f.text_field :site_url, id: 'url', class:'w-full', readonly: true %>
           </label>
         </div>
 
