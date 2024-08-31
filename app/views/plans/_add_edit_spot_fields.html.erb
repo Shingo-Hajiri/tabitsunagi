@@ -19,40 +19,32 @@
     <%= f.file_field :image, class: 'w-full, file-input border-none custom-file-input bg-white' %>
   </div>
 
-  <div class='pt-10 mb-5 sm:mx-32'>
-    <details class="collapse collapse-arrow">
-      <summary class="collapse-title font-bold font-medium">その他の入力情報を見る</summary>
-      <div class="collapse-content">
-        <p class='pt-10 text-custom-red'>※ 施設名を入力すると自動で反映されます</p>
-        <div class='pt-10'>
-          <%= f.label :address %>
-          <label class='input flex items-center gap-2 bg-white'>
-            <%= f.text_field :address, id: 'address', class:'w-full' %>
-          </label>
-        </div>
+  <div class='pt-10' style='display: none;'>
+    <%= f.label :address %>
+    <label class='input flex items-center gap-2 bg-white'>
+      <%= f.text_field :address, id: 'address', class:'w-full' %>
+    </label>
+  </div>
 
-        <div class='pt-10'>
-          <%= f.label :opening_hours %>
-          <label class='input flex items-center gap-2 bg-white'>
-            <%= f.text_field :opening_hours, id: 'opening', class:'w-full' %>
-          </label>
-        </div>
+  <div class='pt-10' style='display: none;'>
+    <%= f.label :site_url %>
+    <label class='input flex items-center gap-2 bg-white'>
+      <%= f.text_field :site_url, id: 'url', class:'w-full' %>
+    </label>
+  </div>
 
-        <div class='pt-10'>
-          <%= f.label :phone_number %>
-          <label class='input flex items-center gap-2 bg-white'>
-            <%= f.text_field :phone_number, id: 'phone', class:'w-full' %>
-          </label>
-        </div>
+  <div class='pt-10' style='display: none;'>
+    <%= f.label :opening_hours %>
+    <label class='input flex items-center gap-2 bg-white'>
+      <%= f.text_field :opening_hours, id: 'opening', class:'w-full' %>
+    </label>
+  </div>
 
-        <div class='pt-10'>
-          <%= f.label :site_url %>
-          <label class='input flex items-center gap-2 bg-base-200'>
-            <%= f.text_field :site_url, id: 'url', class:'w-full', readonly: true %>
-          </label>
-        </div>
-      </div>
-    </details>
+  <div class='pt-10' style='display: none;'>
+    <%= f.label :phone_number %>
+    <label class='input flex items-center gap-2 bg-white'>
+      <%= f.text_field :phone_number, id: 'phone', class:'w-full' %>
+    </label>
   </div>
 
   <div class='cursor-pointer remove-spot pt-10 sm:mx-32 text-right'>
