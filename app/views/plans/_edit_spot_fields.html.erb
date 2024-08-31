@@ -57,7 +57,7 @@
   </div>
 
   <%= link_to spot_path(f.object.id), data: { turbo_method: :delete, turbo_confirm: "#{ f.object.store_name }の情報を削除しますか？" } do %>
-    <div class='cursor-pointer pt-5 mb-5 sm:mx-32 text-right'>
+    <div class='cursor-pointer pt-10 mb-5 sm:mx-32 text-right'>
       <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
     </div>
   <% end %>
