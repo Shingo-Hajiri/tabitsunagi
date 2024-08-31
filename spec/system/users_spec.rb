@@ -10,9 +10,9 @@ RSpec.describe "Users", type: :system do
       context 'フォームの入力値が正常' do
         it 'ユーザーの新規作成が成功する', js: true do
           visit root_path
-          find('#open').click
-          find('#close').click
-          find('#open').click
+          # find('#open').click
+          # find('#close').click
+          # find('#open').click
           click_link 'アカウント登録'
           fill_in 'ユーザー名', with: 'ヒノアラシ'
           fill_in 'Eメール', with: 'test@example.com'

@@ -124,3 +124,6 @@ ja:
       privacy: プライバシーポリシー
       terms: 利用規約
       usage: サイトについて
+  spots:
+    spot:
+      external_link_confirmation: 外部サイトに移動します。

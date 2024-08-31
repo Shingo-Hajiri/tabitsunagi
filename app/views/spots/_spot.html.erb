@@ -18,6 +18,24 @@
   <% if spot.site_url == 'undefined' %>
     <%= 'URLがありません。' %>
   <% else %>
-    <%= link_to sanitize(spot.site_url), sanitize(spot.site_url), class: 'text-accent-blue hover:opacity-50', target: '_blank' %>
+    <%= link_to sanitize(spot.site_url), sanitize(spot.site_url), class: 'text-accent-blue hover:opacity-50 ', target: '_blank', data: { confirm: t('.external_link_confirmation') } %>
   <% end %>
 </p>
+
+<script>
+  document.addEventListener('turbo:load', () => {
+    console.log('Turbo load event triggered');
+    document.querySelectorAll('a[data-confirm]').forEach((link) => {
+      if(!link.hasAttribute('data-confirm-setup')) {
+        link.addEventListener('click', function (event) {
+          console.log('Link clicked');
+          const message = this.dataset.confirm;
+          if(!confirm(message)) {
+            event.preventDefault();
+          }
+        });
+        link.setAttribute('data-confirm-setup', 'true');
+      }
+    });
+  });
+</script>
