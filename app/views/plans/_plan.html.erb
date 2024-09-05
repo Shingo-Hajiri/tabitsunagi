@@ -35,7 +35,7 @@
         </div>
         <% if user_signed_in? && current_user.own?(plan) %>
           <div>
-            <%= link_to "https://twitter.com/share?url=#{ plan_url(plan) }&text=【おすすめの旅スポットを投稿しました！！】%0a%0a#{ plan.title } %0a%23旅つなぎ", target: '_blank' do %>
+            <%= link_to "https://twitter.com/intent/tweet?url=#{ plan_url(plan) }&text=【おすすめの旅スポットを投稿しました！！】%0a%0a#{ plan.title } %0a%23旅つなぎ", target: '_blank' do %>
               <i class='fa-brands fa-square-x-twitter fa-lg'></i>
             <% end %>
             <%= link_to edit_plan_path(plan) do %>

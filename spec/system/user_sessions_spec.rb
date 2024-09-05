@@ -50,7 +50,7 @@ RSpec.describe "UserSessions", type: :system do
       context 'メールアドレスとパスワードの組み合わせが違う' do
         it 'ログイン処理が失敗する' do
           visit new_user_session_path
-          find('.svg-inline--fa.fa-right-to-bracket.fa-xl').click
+          # find('.svg-inline--fa.fa-right-to-bracket.fa-xl').click
           fill_in 'Eメール', with: user.email
           fill_in 'パスワード', with: 'test5678'
           click_button 'ログイン'
