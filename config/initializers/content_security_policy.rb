@@ -6,8 +6,6 @@
 
 Rails.application.configure do
   config.content_security_policy do |policy|
-    nonce = SecureRandom.base64(16)
-
     policy.default_src :self
     policy.base_uri    :self
     policy.font_src    :self, 'https://fonts.gstatic.com'
@@ -18,18 +16,18 @@ Rails.application.configure do
     # policy.object_src  :none
     policy.frame_src   '*.google.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.google-analytics.com'
-    policy.script_src  :self, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
-                       'https://*.ggpht.com', '*.googleusercontent.com', 'blob:', :strict_dynamic, -> { "'nonce-#{nonce}'" }
-    policy.style_src   :self, 'https://fonts.googleapis.com', :strict_dynamic, -> { "'nonce-#{nonce}'" }
+    policy.script_src  :self, :unsafe_inline, :unsafe_eval, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
+                       'https://*.ggpht.com', '*.googleusercontent.com', 'blob:'
+    policy.style_src   :self, :unsafe_inline, 'https://fonts.googleapis.com'
     policy.worker_src  'blob:'
     # Specify URI for violation reports
     # policy.report_uri "/csp-violation-report-endpoint"
   end
 #
-#   # Generate session nonces for permitted importmap, inline scripts, and inline styles.
+# Generate session nonces for permitted importmap, inline scripts, and inline styles.
 #   config.content_security_policy_nonce_generator = ->(request) { request.session.id.to_s }
 #   config.content_security_policy_nonce_directives = %w(script-src style-src)
 #
-#   # Report violations without enforcing the policy.
-  config.content_security_policy_report_only = false
+# Report violations without enforcing the policy.
+# config.content_security_policy_report_only = true
 end
