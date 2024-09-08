@@ -7,6 +7,7 @@
 Rails.application.configure do
   config.content_security_policy do |policy|
     policy.default_src :self
+    policy.base_uri    :self
     policy.font_src    :self, 'https://fonts.gstatic.com'
     policy.img_src     :self, 'https://*.googleapis.com', 'https://*.gstatic.com',
                        '*.google.com', '*.googleusercontent.com',
@@ -16,8 +17,8 @@ Rails.application.configure do
     policy.frame_src   '*.google.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:'
     policy.script_src  :self, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
-                       'https://*.ggpht.com', '*.googleusercontent.com', 'blob:', :strict_dynamic, -> { "'nonce-#{@nonce}'" }
-    policy.style_src   :self, 'https://fonts.googleapis.com', :strict_dynamic, -> { "'nonce-#{@nonce}'" }
+                       'https://*.ggpht.com', '*.googleusercontent.com', 'blob:', :unsafe_inline, :strict_dynamic, -> { "'nonce-#{@nonce}'" }
+    policy.style_src   :self, 'https://fonts.googleapis.com', :unsafe_inline, :strict_dynamic, -> { "'nonce-#{@nonce}'" }
     policy.worker_src  'blob:'
     # Specify URI for violation reports
     # policy.report_uri "/csp-violation-report-endpoint"
@@ -28,5 +29,5 @@ Rails.application.configure do
 #   config.content_security_policy_nonce_directives = %w(script-src style-src)
 #
 #   # Report violations without enforcing the policy.
-#   # config.content_security_policy_report_only = true
+  config.content_security_policy_report_only = false
 end

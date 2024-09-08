@@ -35,8 +35,8 @@
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initialize&libraries=places&v=weekly" defer></script>
     
         <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-119Y04LP59"></script>
-    <script>
+    <script nonce="<%= @nonce %>" async src="https://www.googletagmanager.com/gtag/js?id=G-119Y04LP59"></script>
+    <script nonce="<%= @nonce %>">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
