@@ -11,7 +11,7 @@ Rails.application.configure do
     policy.img_src     :self, 'https://*.googleapis.com', 'https://*.gstatic.com',
                        '*.google.com', '*.googleusercontent.com',
                        'https://tabitsunagi-development.s3.ap-northeast-1.amazonaws.com',
-                       'https://tabitsunagi-production.s3.ap-northeast-1.amazonaws.com', 'data:'
+                       'https://tabitsunagi-production.s3.ap-northeast-1.amazonaws.com', 'data:', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com'
     # policy.object_src  :none
     policy.frame_src   '*.google.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.google-analytics.com'

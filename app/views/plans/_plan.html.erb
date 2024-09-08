@@ -42,7 +42,7 @@
               <i class='fa-solid fa-pen-to-square fa-lg ml-5' style='color: #3d98ff;'></i>
             <% end %>
             <%= link_to plan_path(plan), data: { turbo_method: :delete, turbo_confirm: t('.deleting_confirmation') } do %>
-              <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;' nonce="<%= content_security_policy_nonce %>"></i>
+              <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
             <% end %>
           </div>
         <% else %>
