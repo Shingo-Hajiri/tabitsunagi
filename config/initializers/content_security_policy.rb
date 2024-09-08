@@ -16,9 +16,9 @@ Rails.application.configure do
     # policy.object_src  :none
     policy.frame_src   '*.google.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.google-analytics.com'
-    policy.script_src  :self, :strict_dynamic, -> { "'nonce-#{content_security_policy_nonce}'" }, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
+    policy.script_src  :self, :strict_dynamic, -> { "'nonce-#{@csp_nonce}'" }, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
                        'https://*.ggpht.com', '*.googleusercontent.com', 'blob:'
-    policy.style_src   :self, -> { "'nonce-#{content_security_policy_nonce}'" }, 'https://fonts.googleapis.com'
+    policy.style_src   :self, -> { "'nonce-#{@csp_nonce}'" }, 'https://fonts.googleapis.com'
     policy.worker_src  'blob:'
     # Specify URI for violation reports
     # policy.report_uri "/csp-violation-report-endpoint"

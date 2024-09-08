@@ -20,23 +20,23 @@
     <%= csp_meta_tag %>
 
     <!-- Google Tag Manager -->
-    <script nonce="<%= content_security_policy_nonce %>">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script nonce="<%= @csp_nonce %>">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WX7Q4SN9');</script>
     <!-- End Google Tag Manager -->
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", nonce: content_security_policy_nonce %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module", nonce: content_security_policy_nonce %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", nonce: @csp_nonce %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module", nonce: @csp_nonce %>
     <%= favicon_link_tag('tabitsunagif.svg') %>
 
-    <script nonce="<%= content_security_policy_nonce %>" async
+    <script nonce="<%= @csp_nonce %>" async
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initialize&libraries=places&v=weekly" defer></script>
     
         <!-- Google tag (gtag.js) -->
-    <script nonce="<%= content_security_policy_nonce %>" async src="https://www.googletagmanager.com/gtag/js?id=G-119Y04LP59"></script>
-    <script nonce="<%= content_security_policy_nonce %>">
+    <script nonce="<%= @csp_nonce %>" async src="https://www.googletagmanager.com/gtag/js?id=G-119Y04LP59"></script>
+    <script nonce="<%= @csp_nonce %>">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
