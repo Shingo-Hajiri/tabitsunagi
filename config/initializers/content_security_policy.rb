@@ -12,12 +12,12 @@ Rails.application.configure do
                        '*.google.com', '*.googleusercontent.com',
                        'https://tabitsunagi-development.s3.ap-northeast-1.amazonaws.com',
                        'https://tabitsunagi-production.s3.ap-northeast-1.amazonaws.com', 'data:', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com'
-    # policy.object_src  :none
+    policy.object_src  :none
     policy.frame_src   '*.google.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.google-analytics.com'
-    policy.script_src  :self, :strict_dynamic, -> { "'nonce-#{@csp_nonce}'" }, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
+    policy.script_src  :self, :strict_dynamic, :unsafe_inline, :unsafe_eval, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
                        'https://*.ggpht.com', '*.googleusercontent.com', 'blob:'
-    policy.style_src   :self, -> { "'nonce-#{@csp_nonce}'" }, 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com'
+    policy.style_src   :self, :unsafe_inline, 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com'
     policy.worker_src  'blob:'
     # Specify URI for violation reports
     # policy.report_uri "/csp-violation-report-endpoint"
