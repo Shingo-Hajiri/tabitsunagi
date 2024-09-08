@@ -6,25 +6,25 @@
 
 Rails.application.configure do
   config.content_security_policy do |policy|
+    policy.default_src :self
     policy.base_uri    :self
-    policy.font_src    :self, 'https://fonts.gstatic.com', 'https://cdnjs.cloudflare.com'
+    policy.font_src    :self, 'https://fonts.gstatic.com'
     policy.img_src     :self, 'https://*.googleapis.com', 'https://*.gstatic.com',
                        '*.google.com', '*.googleusercontent.com',
                        'https://tabitsunagi-development.s3.ap-northeast-1.amazonaws.com',
-                       'https://tabitsunagi-production.s3.ap-northeast-1.amazonaws.com', 'data:', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com'
-    policy.object_src  :none
+                       'https://tabitsunagi-production.s3.ap-northeast-1.amazonaws.com', 'data:'
+    # policy.object_src  :none
     policy.frame_src   '*.google.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.google-analytics.com'
-    policy.script_src  :self, :strict_dynamic, :unsafe_inline, :unsafe_eval, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
+    policy.script_src  :self, :unsafe_inline, :unsafe_eval, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
                        'https://*.ggpht.com', '*.googleusercontent.com', 'blob:'
-    policy.style_src   :self, :unsafe_inline, 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com'
+    policy.style_src   :self, :unsafe_inline, 'https://fonts.googleapis.com'
     policy.worker_src  'blob:'
     # Specify URI for violation reports
     # policy.report_uri "/csp-violation-report-endpoint"
   end
-  Rails.application.config.content_security_policy_nonce_generator = -> request { SecureRandom.base64(16) }
 #
-# Generate session nonces for permitted importmap, inline scripts, and inline styles.
+#   # Generate session nonces for permitted importmap, inline scripts, and inline styles.
 #   config.content_security_policy_nonce_generator = ->(request) { request.session.id.to_s }
 #   config.content_security_policy_nonce_directives = %w(script-src style-src)
 #
