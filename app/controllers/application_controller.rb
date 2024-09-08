@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_search
+  before_action :set_nonce
   def not_authenticated
     redirect_to new_user_session_path
   end
@@ -24,5 +25,9 @@ class ApplicationController < ActionController::Base
       hash.merge(word => { title_or_body_or_spots_store_name_or_spots_address_cont: word })
     end
     { combinator: 'and', groupings: grouping_hash }
+  end
+
+  def set_nonce
+    @nonce = SecureRandom.base64(16)
   end
 end
