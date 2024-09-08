@@ -21,7 +21,7 @@
       <div class='flex justify-between mb-3 mx-3 flex-grow'>
         <div class='flex'>
           <div>
-            <i class='fa-solid fa-location-dot fa-lg' style='color: #ffb83d;'></i>
+            <i class='fa-solid fa-location-dot fa-lg' style='color: #ffb83d;' nonce="<%= content_security_policy_nonce %>"></i>
             <span class='text-xs'><%= plan.first_spot_address %></span>
           </div>
           <div class='flex ml-2'>
@@ -42,7 +42,7 @@
               <i class='fa-solid fa-pen-to-square fa-lg ml-5' style='color: #3d98ff;'></i>
             <% end %>
             <%= link_to plan_path(plan), data: { turbo_method: :delete, turbo_confirm: t('.deleting_confirmation') } do %>
-              <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
+              <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;' nonce="<%= content_security_policy_nonce %>"></i>
             <% end %>
           </div>
         <% else %>
