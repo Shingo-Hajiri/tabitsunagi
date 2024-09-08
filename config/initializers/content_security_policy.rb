@@ -15,7 +15,7 @@ Rails.application.configure do
                        'https://tabitsunagi-production.s3.ap-northeast-1.amazonaws.com', 'data:'
     # policy.object_src  :none
     policy.frame_src   '*.google.com'
-    policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:'
+    policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.google-analytics.com'
     policy.script_src  :self, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
                        'https://*.ggpht.com', '*.googleusercontent.com', 'blob:', :unsafe_inline, :strict_dynamic, -> { "'nonce-#{@nonce}'" }
     policy.style_src   :self, 'https://fonts.googleapis.com', :unsafe_inline, :strict_dynamic, -> { "'nonce-#{@nonce}'" }
