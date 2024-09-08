@@ -13,8 +13,8 @@ Rails.application.configure do
     # policy.object_src  :none
     policy.frame_src   '*.google.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:', 'blob:'
-    policy.script_src  :self, 'https://*.googleapis.com', 'https://*.gstatic.com', 'strict-dynamic'
-                      '*.google.com', 'https://*.ggpht.com', '*.googleusercontent.com', 'blob:'
+    policy.script_src  :self, 'https://*.googleapis.com', 'https://*.gstatic.com','*.google.com',
+                      'https://*.ggpht.com', '*.googleusercontent.com', 'blob:', 'strict-dynamic'
     policy.style_src   :self, 'https://fonts.googleapis.com'
     policy.worker_src  'blob:'
     # Specify URI for violation reports
