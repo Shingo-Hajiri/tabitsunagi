@@ -135,6 +135,7 @@ SNSを活用して宣伝をメインで考えています。
 |バックエンド|Ruby(3.2.3, Ruby on Rails(7.1.3)|
 |データベース|PostgreSQL|
 |インフラ|render.com, AmazonS3|
+|セキュリティ|Cloudflare|
 |API|Google Places API, Google Maps JavaScript API, Google Geocoding API, Google Geolocation API|
 |環境構築|Docker|
 |CI/CD|GitHub Actions|
