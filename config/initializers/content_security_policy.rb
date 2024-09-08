@@ -6,7 +6,6 @@
 
 Rails.application.configure do
   config.content_security_policy do |policy|
-    policy.default_src :self
     policy.base_uri    :self
     policy.font_src    :self, 'https://fonts.gstatic.com', 'https://cdnjs.cloudflare.com'
     policy.img_src     :self, 'https://*.googleapis.com', 'https://*.gstatic.com',
