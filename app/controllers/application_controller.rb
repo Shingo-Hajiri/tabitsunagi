@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_search
   before_action :set_csp_nonce
+  helper_method :content_security_policy_nonce
   def not_authenticated
     redirect_to new_user_session_path
   end
@@ -30,5 +31,9 @@ class ApplicationController < ActionController::Base
   def set_csp_nonce
     # CSP nonce を生成
     @csp_nonce = SecureRandom.base64(16)
+  end
+
+  def content_security_policy_nonce
+    @csp_nonce
   end
 end

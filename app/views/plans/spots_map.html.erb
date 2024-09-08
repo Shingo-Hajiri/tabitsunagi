@@ -14,7 +14,7 @@
   </div>
 </dialog>
 
-<script nonce="<%= @csp_nonce %>">
+<script nonce="<%= content_security_policy_nonce %>">
   function initMap() {
     const mapElement = document.getElementById('map');
     const loadingModal = document.getElementById('loading_modal');
@@ -111,5 +111,5 @@
   }
 </script>
 
-<script nonce="<%= @csp_nonce %>" async
+<script nonce="<%= content_security_policy_nonce %>" async
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAPS_API_KEY"] %>&callback=initMap&libraries=places"></script>
