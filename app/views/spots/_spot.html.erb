@@ -22,7 +22,7 @@
   <% end %>
 </p>
 
-<script>
+<script nonce="<%= content_security_policy_nonce %>">
   document.addEventListener('turbo:load', () => {
     console.log('Turbo load event triggered');
     document.querySelectorAll('a[data-confirm]').forEach((link) => {
