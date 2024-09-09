@@ -15,7 +15,7 @@ Rails.application.configure do
                        'https://tabitsunagi-production.s3.ap-northeast-1.amazonaws.com',
                        'https://*.google-analytics.com', 'https://*.googletagmanager.com', 'https://*.analytics.google.com', 'data:'
     # policy.object_src  :none
-    policy.frame_src   '*.google.com'
+    policy.frame_src   '*.google.com', 'https://www.googletagmanager.com'
     policy.connect_src :self, 'https://*.googleapis.com', '*.google.com', 'https://*.gstatic.com', 'data:',
                        'blob:', 'https://www.google-analytics.com', 'https://*.google-analytics.com'
     policy.script_src  :self, :unsafe_inline, :unsafe_eval, 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com',
