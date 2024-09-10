@@ -7,9 +7,9 @@
       <%= link_to profile_path, class: 'mr-12' do %>
         <div class='cursor-pointer sm:hidden'>
           <% if current_user.profile_image&.avatar&.attached? %>
-            <%= image_tag(current_user.profile_image.avatar, class: 'w-7 h-7 rounded-full object-cover') %>
+            <%= image_tag(current_user.profile_image.avatar, class: 'w-7 h-7 rounded-full object-cover', alt: 'アバター画像') %>
           <% else %>
-            <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full object-cover') %>
+            <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
           <% end %>
         </div>
       <% end %>
@@ -32,9 +32,9 @@
           <%= link_to profile_path do %>
             <div class='flex'>
               <% if current_user.profile_image&.avatar&.attached? %>
-                <%= image_tag current_user.profile_image.avatar, class: 'my-0 mx-auto w-8 h-8 rounded-full object-cover' %>
+                <%= image_tag current_user.profile_image.avatar, class: 'my-0 mx-auto w-8 h-8 rounded-full object-cover', alt: 'アバター画像' %>
               <% else %>
-                <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-8 h-8 rounded-full object-cover') %>
+                <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-8 h-8 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
               <% end %>
               <span class='pl-1'><%= current_user.name %></span>
             </div>
@@ -59,9 +59,9 @@
           <li class='mt-6 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'>
           <%= link_to profile_path do %>
             <% if current_user.profile_image&.avatar&.attached? %>
-              <%= image_tag(current_user.profile_image.avatar, class: 'my-0 mx-auto w-16 h-16 rounded-full object-cover') %>
+              <%= image_tag(current_user.profile_image.avatar, class: 'my-0 mx-auto w-16 h-16 rounded-full object-cover', alt: 'アバター画像') %>
             <% else %>
-              <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-16 h-16 rounded-full object-cover') %>
+              <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-16 h-16 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
             <% end %>
               <span><%= current_user.name %></span>
           <% end %> 

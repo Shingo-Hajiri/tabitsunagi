@@ -31,3 +31,7 @@
   width: 28px;
   height: 28px;
 }
+
+summary::marker {
+  content: '▶︎';
+}

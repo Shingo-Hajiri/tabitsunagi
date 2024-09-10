@@ -75,7 +75,7 @@
             <div class='sm:mx-10 md:mx-20'>
               <p class='mt-3 mb-3 font-bold text-lg'><%= spot.store_name %></p>
               <% if spot.image.present? %>
-                <%= image_tag spot.image, class: 'w-64 h-32 mb-3 rounded-lg object-cover' %>
+                <%= image_tag spot.image, class: 'w-64 h-32 mb-3 rounded-lg object-cover', alt: "#{spot.store_name}の画像" %>
               <% end %>
               <% if spot.opening_hours.present? %>
                 <p class='mb-3 sm:text-sm md:text-base'>営業時間：<br>
