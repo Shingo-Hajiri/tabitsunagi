@@ -2,9 +2,9 @@
 <h2 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-left text-xl'><%= sanitize(spot.store_name) %></h2>
 <div>
   <% if spot.image.present? %>
-    <%= image_tag spot.image, class: 'w-100 h-50 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover' %>
+    <%= image_tag spot.image, class: 'w-100 h-50 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover', alt: "#{spot.store_name}の画像" %>
   <% else %>
-    <%= image_tag('sample.jpeg', class: 'w-100 h-50 mx-auto rounded-lg object-cover') %>
+    <%= image_tag('sample.jpeg', class: 'w-100 h-50 mx-auto rounded-lg object-cover', alt: 'デフォルト画像') %>
   <% end %>
 </div>
 <p class='pt-4 pb-5 mb-5 mx-auto break-words'><%= auto_link_urls(spot.introduction) %></p>
@@ -21,6 +21,26 @@
     <%= link_to sanitize(spot.site_url), sanitize(spot.site_url), class: 'text-accent-blue hover:opacity-50 ', target: '_blank', data: { confirm: t('.external_link_confirmation') } %>
   <% end %>
 </p>
+<details class="collapse bg-base-200 mb-5">
+  <summary class="collapse-title font-medium">その他の情報を見る</summary>
+  <div class="collapse-content">
+    <p class='pt-4 pb-5 mb-5 mx-auto break-words'>営業時間:<br>
+    <% if spot.opening_hours.present? %>
+      <% spot.opening_hours.split(', ').each do |hour| %>
+        <%= hour %><br>
+      <% end %>
+    <% else %>
+      <%= '営業時間情報はありません' %>
+    <% end %>
+    <p class='pt-4 pb-5 mb-5 mx-auto break-words'>電話番号:<br>
+    <% if spot.phone_number.present? %>
+      <%= spot.phone_number %>
+    <% else %>
+      <%= '電話番号情報はありません' %>
+    <% end %>
+  </div>
+</details>
+
 
 <script>
   document.addEventListener('turbo:load', () => {

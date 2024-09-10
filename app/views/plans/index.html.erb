@@ -1,4 +1,5 @@
 <%= content_for(:title, t('.title')) %>
+<%= content_for(:meta_description, "みんなのおすすめ旅を探すことができます。飲食店やレジャースポット、旅館、温泉、観光名所、山、川、海などの旅行情報を確認できます。") %>
 <main class='py-0 px-5 my-0 mx-auto max-w-screen-xl h-full z-10'>
   <%= render 'shared/search', q: @q, url: plans_path %>
   <h1 class='text-accent-blue font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= t('.title') %></h1>

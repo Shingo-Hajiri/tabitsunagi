@@ -22,7 +22,7 @@
       <% if f.object.image&.attached? %>
         <p><%= t('.current_image') %></p>
         <div>
-          <%= image_tag f.object.image, class: 'w-32 h-32 rounded-lg object-cover' %>
+          <%= image_tag f.object.image, class: 'w-32 h-32 rounded-lg object-cover', alt: '現在のおすすめ旅の画像' %>
         </div>
       <% end %>
     </div>

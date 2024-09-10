@@ -3,6 +3,7 @@
   <head>
     <title><%= page_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= meta_description %>">
 
     <meta property="og:title" content="旅つなぎ" />
     <meta property="og:type" content="website" />
@@ -28,7 +29,7 @@
     <!-- End Google Tag Manager -->
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload"%>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module"%>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module", defer: true%>
     <%= favicon_link_tag('tabitsunagif.svg') %>
 
     <script async

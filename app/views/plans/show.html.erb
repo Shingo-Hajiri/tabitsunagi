@@ -1,13 +1,14 @@
 <%= content_for(:title, @plan.title) %>
+<%= content_for(:meta_description, "#{@plan.title}のおすすめスポットを見ることができます。飲食店やレジャースポット、旅館、温泉、観光名所、山、川、海などおすすめスポットの住所、営業時間、サイトURL、電話番号を確認することができます。") %>
 <main class='py-0 px-5 mb-0 mx-auto max-w-screen-xl h-full z-10'>
   <%= render 'shared/search', q: @q, url: plans_path %>
   <div class='mb-5 mx-5'>
     <div class='flex justify-between mt-8 mb-3 flex-grow'>
       <div class='flex'>
           <% if @plan.user.profile_image&.avatar&.attached? %>
-            <%= image_tag(@plan.user.profile_image.avatar, class: 'w-8 h-8 rounded-full object-cover') %>
+            <%= image_tag(@plan.user.profile_image.avatar, class: 'w-8 h-8 rounded-full object-cover', alt: 'アバター画像') %>
           <% else %>
-            <%= image_tag('sample.jpeg', class: 'w-8 h-8 rounded-full object-cover') %>
+            <%= image_tag('sample.jpeg', class: 'w-8 h-8 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
           <% end %>
           <span class='pl-1 leading-7'><%= truncate(@plan.user.name, length: 8) %></span>
       </div>
@@ -32,9 +33,9 @@
     <h1 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= @plan.title %></h1>
     <div>
       <% if @plan.thumbnail.present? %>
-        <%= image_tag @plan.thumbnail, class: 'w-100 h-50 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover' %>
+        <%= image_tag @plan.thumbnail, class: 'w-100 h-50 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover', alt: "#{@plan.title}のサムネイル画像" %>
       <% else %>
-        <%= image_tag('sample.jpeg', class: 'w-100 h-50 mx-auto rounded-lg object-cover') %>
+        <%= image_tag('sample.jpeg', class: 'w-100 h-50 mx-auto rounded-lg object-cover', alt: 'デフォルトサムネイル画像') %>
       <% end %>
     </div>
     <p class='pt-4 pb-5 mb-5 mx-auto break-words'><%= auto_link_urls(@plan.body) %></p>
