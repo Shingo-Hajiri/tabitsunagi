@@ -35,7 +35,6 @@
 summary::before {
   content: '▶︎'; /* 閉じている時の矢印 */
   font-size: 16px;
-  margin-right: 8px;
 }
 
 details[open] summary::before {
