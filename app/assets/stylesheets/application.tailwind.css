@@ -32,6 +32,12 @@
   height: 28px;
 }
 
-summary::marker {
-  content: '▶︎';
+summary::before {
+  content: '▶︎'; /* 閉じている時の矢印 */
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+details[open] summary::before {
+  content: '▼'; /* 開いている時の矢印 */
 }
