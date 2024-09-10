@@ -32,7 +32,6 @@ Rails.application.configure do
   # 以下4つは追記した
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
-  config.assets.compile = false
   config.assets.digest = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
