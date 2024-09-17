@@ -33,7 +33,7 @@
     <h1 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-center text-xl'><%= @plan.title %></h1>
     <div>
       <% if @plan.thumbnail.present? %>
-        <%= image_tag @plan.thumbnail, class: 'w-96 h-48 mx-auto rounded-lg object-cover', alt: "#{@plan.title}のサムネイル画像" %>
+        <%= image_tag @plan.thumbnail, class: 'w-100 h-50 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover', alt: "#{@plan.title}のサムネイル画像" %>
       <% else %>
         <%= image_tag('sample.png', class: 'w-96 h-48 mx-auto rounded-lg object-cover', alt: 'デフォルトサムネイル画像') %>
       <% end %>
