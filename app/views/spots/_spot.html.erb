@@ -2,7 +2,7 @@
 <h2 class='text-main-orange font-bold pt-4 pb-5 mb-5 mx-auto text-left text-xl'><%= sanitize(spot.store_name) %></h2>
 <div>
   <% if spot.image.present? %>
-    <%= image_tag spot.image, class: 'w-96 h-48 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover', alt: "#{spot.store_name}の画像" %>
+    <%= image_tag spot.image, class: 'w-96 h-48 mx-auto rounded-lg object-cover', alt: "#{spot.store_name}の画像" %>
   <% else %>
     <%= image_tag('sample.png', class: 'w-96 h-48 mx-auto rounded-lg object-cover', alt: 'デフォルト画像') %>
   <% end %>
