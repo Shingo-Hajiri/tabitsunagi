@@ -6,7 +6,7 @@
       <% if current_user.profile_image&.avatar&.attached? %>
         <%= image_tag(current_user.profile_image.avatar, class: 'my-0 mx-auto w-32 h-32 rounded-full object-cover') %>
       <% else %>
-        <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-32 h-32 rounded-full object-cover') %>
+        <%= image_tag('profile_sample.png', class: 'my-0 mx-auto w-32 h-32 rounded-full object-cover') %>
       <% end %>
       <span class='pl-1'><%= current_user.name %></span>
     </div>
