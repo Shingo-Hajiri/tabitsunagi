@@ -9,7 +9,7 @@
           <% if current_user.profile_image&.avatar&.attached? %>
             <%= image_tag(current_user.profile_image.avatar, class: 'w-7 h-7 rounded-full object-cover', alt: 'アバター画像') %>
           <% else %>
-            <%= image_tag('sample.jpeg', class: 'w-7 h-7 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
+            <%= image_tag('profile_sample.png', class: 'w-7 h-7 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
           <% end %>
         </div>
       <% end %>
@@ -34,7 +34,7 @@
               <% if current_user.profile_image&.avatar&.attached? %>
                 <%= image_tag current_user.profile_image.avatar, class: 'my-0 mx-auto w-8 h-8 rounded-full object-cover', alt: 'アバター画像' %>
               <% else %>
-                <%= image_tag('sample.jpeg', class: 'my-0 mx-auto w-8 h-8 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
+                <%= image_tag('profile_sample.png', class: 'my-0 mx-auto w-8 h-8 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
               <% end %>
               <span class='pl-1'><%= current_user.name %></span>
             </div>

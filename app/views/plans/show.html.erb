@@ -8,7 +8,7 @@
           <% if @plan.user.profile_image&.avatar&.attached? %>
             <%= image_tag(@plan.user.profile_image.avatar, class: 'w-8 h-8 rounded-full object-cover', alt: 'アバター画像') %>
           <% else %>
-            <%= image_tag('sample.jpeg', class: 'w-8 h-8 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
+            <%= image_tag('profile_sample.png', class: 'w-8 h-8 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
           <% end %>
           <span class='pl-1 leading-7'><%= truncate(@plan.user.name, length: 8) %></span>
       </div>
@@ -35,7 +35,7 @@
       <% if @plan.thumbnail.present? %>
         <%= image_tag @plan.thumbnail, class: 'w-100 h-50 mb:w-1/2 md:h-screen mx-auto rounded-lg object-cover', alt: "#{@plan.title}のサムネイル画像" %>
       <% else %>
-        <%= image_tag('sample.jpeg', class: 'w-100 h-50 mx-auto rounded-lg object-cover', alt: 'デフォルトサムネイル画像') %>
+        <%= image_tag('sample.png', class: 'w-100 h-50 mx-auto rounded-lg object-cover', alt: 'デフォルトサムネイル画像') %>
       <% end %>
     </div>
     <p class='pt-4 pb-5 mb-5 mx-auto break-words'><%= auto_link_urls(@plan.body) %></p>
