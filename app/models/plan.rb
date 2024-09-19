@@ -5,7 +5,8 @@ class Plan < ApplicationRecord
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
   has_many :spots, dependent: :destroy
-  accepts_nested_attributes_for :spots, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :spots, allow_destroy: true
+  validates_associated :spots
   has_one_attached :thumbnail
 
   def self.ransackable_attributes(auth_object = nil)
