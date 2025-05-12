@@ -19,7 +19,7 @@
         <% end %>
       </div>
       <div class='flex justify-between mb-3 mx-3 flex-grow'>
-        <div class='flex'>
+        <div class='flex pt-2'>
           <div>
             <i class='fa-solid fa-location-dot fa-lg' style='color: #ffb83d;'></i>
             <span class='text-xs'><%= plan.first_spot_address %></span>
@@ -34,16 +34,25 @@
           </div>
         </div>
         <% if user_signed_in? && current_user.own?(plan) %>
-          <div>
+          <div class='flex'>
+            <div class='text-center'>
             <%= link_to "https://twitter.com/intent/tweet?url=#{ plan_url(plan) }&text=【おすすめの旅スポットを投稿しました！！】%0a%0a#{ plan.title } %0a%23旅つなぎ", target: '_blank' do %>
               <i class='fa-brands fa-square-x-twitter fa-lg'></i>
+              <p class="text-xs">共有</p>
             <% end %>
+            </div>
+            <div class='text-center  ml-5'>
             <%= link_to edit_plan_path(plan) do %>
-              <i class='fa-solid fa-pen-to-square fa-lg ml-5' style='color: #3d98ff;'></i>
+              <i class='fa-solid fa-pen-to-square fa-lg' style='color: #3d98ff;'></i>
+              <p class="text-xs">編集</p>
             <% end %>
+            </div>
+            <div class='text-center  ml-5'>
             <%= link_to plan_path(plan), data: { turbo_method: :delete, turbo_confirm: t('.deleting_confirmation') } do %>
-              <i class='fa-solid fa-trash-can fa-lg ml-5' style='color: #ed7b7b;'></i>
+              <i class='fa-solid fa-trash-can fa-lg' style='color: #ed7b7b;'></i>
+              <p class="text-xs">削除</p>
             <% end %>
+            </div>
           </div>
         <% else %>
           <% if user_signed_in? %>

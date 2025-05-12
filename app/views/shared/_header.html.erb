@@ -4,22 +4,24 @@
       <h1 class='m-0 font-black text-xl'><%= t('.title') %></h1>
     <% end %>
     <div class='flex'>
-      <%= link_to profile_path, class: 'mr-12' do %>
+      <%= link_to profile_path, class: 'mr-8' do %>
         <div class='cursor-pointer sm:hidden'>
           <% if current_user.profile_image&.avatar&.attached? %>
-            <%= image_tag(current_user.profile_image.avatar, class: 'w-7 h-7 rounded-full object-cover', alt: 'アバター画像') %>
+            <%= image_tag(current_user.profile_image.avatar, class: 'w-8 h-8 rounded-full object-cover', alt: 'アバター画像') %>
           <% else %>
-            <%= image_tag('profile_sample.png', class: 'w-7 h-7 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
+            <%= image_tag('profile_sample.png', class: 'w-8 h-8 rounded-full object-cover', alt: 'デフォルトアバター画像') %>
           <% end %>
         </div>
       <% end %>
-      <%= link_to new_plan_path, class: 'mr-12' do %>
-        <div class='cursor-pointer sm:hidden'>
+      <%= link_to new_plan_path, class: 'mr-8' do %>
+        <div class='cursor-pointer text-center sm:hidden'>
           <i class="fa-regular fa-paper-plane fa-lg"></i>
+          <p class="text-xs">投稿する</p>
         </div>
       <% end %>
-      <div id='open' class='cursor-pointer sm:hidden'>
+      <div id='open' class='cursor-pointer text-center sm:hidden'>
         <i class='fa-solid fa-bars fa-xl'></i>
+        <p class="text-xs">メニュー</p>
       </div>
     </div>
     <div id='close' class='cursor-pointer hidden z-30 sm:hidden' style='width: 28px; height: 28px;'>
@@ -44,11 +46,6 @@
           <li><%= link_to t('.my_recommends'), my_recommends_plans_path %></li>
           <li><%= link_to t('.plans_index'), plans_path %></li>
           <li><%= link_to t('.my_bookmarks'), bookmarks_plans_path %></li>
-          <li>
-            <%= link_to 'https://tripot-share.com/', target: '_blank' do %>
-              <span class='block'><%= t('.make_a_plan') %></span><span class='text-xs block'><%= t('.attention') %></span>
-            <% end %>
-          </li>
           <li><%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
         </ul>
       </nav>
@@ -70,11 +67,6 @@
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.my_recommends.title'), my_recommends_plans_path %></li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.index.title'), plans_path %></li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('plans.bookmarks.title'), bookmarks_plans_path %></li>
-          <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'>
-            <%= link_to 'https://tripot-share.com/', target: '_blank' do %>
-              <%= t('.hm_make_a_plan') %><br><span class='text-xs'><%= t('.attention') %></span>
-            <% end %>
-          </li>
           <li class='mt-8 translate-y-4 transition-opacity transition-transform animate-tracking-in-expand-fwd-bottom'><%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
         </ul>
       </nav>

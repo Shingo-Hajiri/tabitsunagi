@@ -20,6 +20,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        userLogin: <%= user_signed_in? ? 'true' : 'false' %>
+      });
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
